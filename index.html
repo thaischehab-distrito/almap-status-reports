@@ -385,9 +385,13 @@ html, body { height: 100%; font-family: 'Red Hat Display', system-ui, sans-serif
       <span class="month-dot dot-amarelo"></span>
       <span class="month-name">Mar 2026</span>
     </div>
-    <div class="month-item active" onclick="showMonth('abr26')">
+    <div class="month-item" onclick="showMonth('abr26')">
       <span class="month-dot dot-amarelo"></span>
       <span class="month-name">Abr 2026</span>
+    </div>
+    <div class="month-item active" onclick="showMonth('mai26')">
+      <span class="month-dot dot-amarelo"></span>
+      <span class="month-name">Mai 2026</span>
       <span class="month-new-badge">atual</span>
     </div>
     <div style="height:1px;background:rgba(255,255,255,0.07);margin:8px 2px;"></div>
@@ -399,7 +403,7 @@ html, body { height: 100%; font-family: 'Red Hat Display', system-ui, sans-serif
 
   <div class="sidebar-footer">
     <button class="btn-generate" onclick="alert('Conecte o Google Drive para gerar o relatório do próximo mês automaticamente.')">
-      ✦ Gerar Maio 2026
+      ✦ Gerar Junho 2026
     </button>
   </div>
 </aside>
@@ -474,15 +478,14 @@ html, body { height: 100%; font-family: 'Red Hat Display', system-ui, sans-serif
 <!-- ═══════════════════════════════════════════
      ABRIL 2026 — RELATÓRIO COMPLETO
 ═══════════════════════════════════════════ -->
-<div class="report-view active" id="view-abr26">
+<div class="report-view" id="view-abr26">
   <div class="rpt-header">
     <div class="rpt-header-left">
       <div class="rpt-header-title">Status Report — AlmapBBDO — Abril 2026</div>
-      <div class="rpt-header-sub">AI Factory · Sprint 7 — encerramento · Relatório mais recente</div>
+      <div class="rpt-header-sub">AI Factory · Sprint 7 — encerramento</div>
     </div>
     <div class="rpt-header-right">
       <button class="btn-export" onclick="window.print()">Exportar PDF</button>
-      <button class="btn-export primary" onclick="showMonth('hist')">Ver histórico</button>
     </div>
   </div>
 
@@ -683,6 +686,230 @@ html, body { height: 100%; font-family: 'Red Hat Display', system-ui, sans-serif
   </div>
 </div>
 
+<div class="report-view active" id="view-mai26">
+  <div class="rpt-header">
+    <div class="rpt-header-left">
+      <div class="rpt-header-title">Status Report — AlmapBBDO — Maio 2026</div>
+      <div class="rpt-header-sub">AI Factory · Sprint 7 — semanas finais · Relatório mais recente</div>
+    </div>
+    <div class="rpt-header-right">
+      <button class="btn-export" onclick="window.print()">Exportar PDF</button>
+      <button class="btn-export primary" onclick="showMonth('hist')">Ver histórico</button>
+    </div>
+  </div>
+
+  <div class="rpt-hero">
+    <div class="rpt-hero-top">
+      <div>
+        <div class="hero-tag">AI Factory — Squad Dedicada</div>
+        <h1>Status Report<br>AlmapBBDO</h1>
+        <div class="rpt-hero-sub">Período de referência: 01/05/2026 – 31/05/2026</div>
+      </div>
+      <div class="farol-geral">
+        <span class="farol-geral-label">Farol geral</span>
+        <div class="farol-badge amarelo">
+          <div class="farol-dot"></div>
+          <span>Atenção</span>
+        </div>
+      </div>
+    </div>
+    <div class="rpt-hero-meta">
+      <div class="meta-item"><div class="meta-label">Head Delivery</div><div class="meta-val">Pedrão Oliveira</div></div>
+      <div class="meta-item"><div class="meta-label">Product Owner</div><div class="meta-val">Vinícius Hessel / Thais Chehab</div></div>
+      <div class="meta-item"><div class="meta-label">Início do projeto</div><div class="meta-val">Setembro 2025</div></div>
+      <div class="meta-item"><div class="meta-label">Sprint atual</div><div class="meta-val">Sprint 7 (23/03 – 15/05)</div></div>
+      <div class="meta-item"><div class="meta-label">Produtos ativos</div><div class="meta-val">5 squads</div></div>
+    </div>
+  </div>
+
+  <div class="rpt-body">
+    <!-- 01 STATUS GERAL -->
+    <div class="section">
+      <div class="section-title"><div class="section-num">01</div><h2>Status geral</h2></div>
+      <div class="saude-grid">
+        <div class="saude-card">
+          <h4>Resumo executivo</h4>
+          <p>Maio marca o encerramento da Sprint 7 com o Synths v2 consolidado como versão definitiva e infraestrutura superior à v1. O Thesis avança com as semanas finais da sprint, mas permanece em atenção aguardando validação de testes pela Almap. Uma dependência transversal crítica persiste em todos os produtos: ausência de feedback ativo da Almap para testes e devolutivas.</p>
+        </div>
+        <div class="saude-card">
+          <h4>Score de risco do mês</h4>
+          <div class="score-wrap">
+            <div class="score-item warn"><div class="score-num">1</div><div class="score-label">Bloqueios</div></div>
+            <div class="score-item warn"><div class="score-num">4</div><div class="score-label">Pendências ativas</div></div>
+            <div class="score-item ok"><div class="score-num">4</div><div class="score-label">Faróis verdes</div></div>
+            <div class="score-item info"><div class="score-num">1</div><div class="score-label">Farol amarelo</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- 02 ATIVIDADES -->
+    <div class="section">
+      <div class="section-title"><div class="section-num">02</div><h2>Resumo de atividades — Sprint 7 (semanas finais)</h2></div>
+
+      <div class="projeto-card">
+        <div class="projeto-header">
+          <div class="projeto-header-left"><div class="projeto-nome">Synths v2</div><div class="projeto-info">PO: Thais Chehab · Início: Set/2025</div></div>
+          <div class="farol-pill verde">Verde</div>
+        </div>
+        <div class="projeto-body">
+          <div class="proj-col">
+            <h5>Entregas da Sprint 7 — Semanas 18–19</h5>
+            <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">Roteiros assíncronos via Celery — timeout eliminado, polling no frontend</div><div class="entrega-date">Sem. 18 · Done</div></div></div>
+            <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">Critérios predefinidos para objetivos — checkbox e trava de edição</div><div class="entrega-date">Sem. 18 · Done</div></div></div>
+            <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">Exportação de PDF reescrita (pdfmake) — páginas em branco corrigidas</div><div class="entrega-date">Sem. 18 · Done</div></div></div>
+            <div class="entrega-item"><div class="entrega-dot progress"></div><div><div class="entrega-text">Estabilidade WebSocket + tracing Langfuse — em homologação</div><div class="entrega-date">Sem. 19 · Homologação</div></div></div>
+            <div class="entrega-item"><div class="entrega-dot waiting"></div><div><div class="entrega-text">Alinhamento Final de UX (Personas Avançadas) — aguardando retorno Almap (desde 05/05)</div><div class="entrega-date">TBD · Aguardando Almap</div></div></div>
+          </div>
+          <div class="proj-col">
+            <h5>Pendências e riscos</h5>
+            <ul class="alerta-list">
+              <li class="pendencia">Validação final em homolog dependente da Almap</li>
+              <li class="pendencia">Alinhamento de roadmap pós-lançamento — pauta com Daniel (15/05)</li>
+              <li class="risco">V2 consolidada como versão definitiva; migração para produção aguarda validação Almap</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="projeto-card">
+        <div class="projeto-header">
+          <div class="projeto-header-left"><div class="projeto-nome">Assets / ALM</div><div class="projeto-info">PO: Vinícius Hessel · Início: Set/2025</div></div>
+          <div class="farol-pill verde">Verde</div>
+        </div>
+        <div class="projeto-body">
+          <div class="proj-col">
+            <h5>Entregas — Semanas 18–19</h5>
+            <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">Recuperação de assets — Cores e variantes</div><div class="entrega-date">Sem. 18 · Done</div></div></div>
+            <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">Zip para cada Marca implementado</div><div class="entrega-date">Sem. 19 · Done</div></div></div>
+            <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">Relatório Gerencial LangFuse</div><div class="entrega-date">Sem. 19 · Done</div></div></div>
+            <div class="entrega-item"><div class="entrega-dot progress"></div><div><div class="entrega-text">Alteração fluxo MFA para API Distrito — aguardando definição Almap</div><div class="entrega-date">Em andamento</div></div></div>
+          </div>
+          <div class="proj-col">
+            <h5>Pendências e riscos</h5>
+            <ul class="alerta-list">
+              <li class="pendencia">Testes e devolutiva da Almap — aguardando</li>
+              <li class="pendencia">Aguardar envio de usuários via API (AI Suite)</li>
+              <li class="risco">Fluxo MFA aguardando definição de rotina de envio pela Almap</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="projeto-card">
+        <div class="projeto-header">
+          <div class="projeto-header-left"><div class="projeto-nome">Conversor de Plano — CPM</div><div class="projeto-info">PO: Vinícius Hessel · Início: Set/2025</div></div>
+          <div class="farol-pill verde">Verde</div>
+        </div>
+        <div class="projeto-body">
+          <div class="proj-col">
+            <h5>Situação da sprint</h5>
+            <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">Importe de Metas entregue e integrado ao front-end (03/04)</div><div class="entrega-date">Done</div></div></div>
+            <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">Manual de uso entregue e liberado para testes (14/04)</div><div class="entrega-date">Done</div></div></div>
+            <div class="entrega-item"><div class="entrega-dot progress"></div><div><div class="entrega-text">Fluxo MFA alterado para API Distrito — aguardando Almap</div><div class="entrega-date">Em andamento</div></div></div>
+            <div class="entrega-item"><div class="entrega-dot waiting"></div><div><div class="entrega-text">Sem feedback desde entrega do caso de uso (03/04) — +7 semanas</div><div class="entrega-date">Aguardando Almap</div></div></div>
+          </div>
+          <div class="proj-col">
+            <h5>Pendências e riscos</h5>
+            <ul class="alerta-list">
+              <li class="pendencia">Realização de testes e devolutiva pela Almap — sem retorno há +7 semanas</li>
+              <li class="risco">Acurácia em diferentes tipos de planos de mídia — validação pendente</li>
+              <li class="risco">Baixa adoção da ferramenta por ausência de feedback</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="projeto-card">
+        <div class="projeto-header">
+          <div class="projeto-header-left"><div class="projeto-nome">Double Check / App Tradutor</div><div class="projeto-info">PO: Vinícius Hessel · Início: Nov/2025</div></div>
+          <div class="farol-pill verde">Verde</div>
+        </div>
+        <div class="projeto-body">
+          <div class="proj-col">
+            <h5>Evolução contínua</h5>
+            <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">Criação e padronização de regras de validação e roteiros</div><div class="entrega-date">Contínuo</div></div></div>
+            <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">Testes de precisão e correções de falsos positivos/negativos</div><div class="entrega-date">Contínuo</div></div></div>
+            <div class="entrega-item"><div class="entrega-dot progress"></div><div><div class="entrega-text">Fluxo MFA para API Distrito — aguardando definição Almap</div><div class="entrega-date">Em andamento</div></div></div>
+          </div>
+          <div class="proj-col">
+            <h5>Pendências e riscos</h5>
+            <ul class="alerta-list">
+              <li class="pendencia">Baixo engajamento da equipe piloto nas avaliações</li>
+              <li class="risco">Dependência da disponibilidade da equipe piloto para feedback e testes</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="projeto-card">
+        <div class="projeto-header">
+          <div class="projeto-header-left"><div class="projeto-nome">Thesis</div><div class="projeto-info">PO: Vinícius Hessel · Início: Nov/2025</div></div>
+          <div class="farol-pill amarelo">Atenção</div>
+        </div>
+        <div class="projeto-body">
+          <div class="proj-col">
+            <h5>Entregas — Sprint 7 (Semanas 18–19)</h5>
+            <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">Estímulo vídeo/vídeo 100% entregue</div><div class="entrega-date">Done</div></div></div>
+            <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">Adição de Escala para Pesos e Notas entregue</div><div class="entrega-date">Done</div></div></div>
+            <div class="entrega-item"><div class="entrega-dot progress"></div><div><div class="entrega-text">Estímulo vídeo/áudio (90%) — liberação de testes em curso</div><div class="entrega-date">Em andamento</div></div></div>
+            <div class="entrega-item"><div class="entrega-dot progress"></div><div><div class="entrega-text">Estímulo de GIF em desenvolvimento</div><div class="entrega-date">Em andamento</div></div></div>
+            <div class="entrega-item"><div class="entrega-dot waiting"></div><div><div class="entrega-text">Análise técnica para desacoplamento Thesis x AI Suite iniciada</div><div class="entrega-date">TBD</div></div></div>
+          </div>
+          <div class="proj-col">
+            <h5>Pendências e riscos</h5>
+            <ul class="alerta-list">
+              <li class="pendencia">Testes e devolutiva pela Almap — aguardando</li>
+              <li class="pendencia">Logo e descrição de TODOS os casos de uso — pendente com Almap</li>
+              <li class="risco">Desacoplamento Thesis x AI Suite: migração PostgreSQL crítica (dump + restore + validação de jobs)</li>
+              <li class="risco">Worker Celery requer mínimo 4Gi de memória no Cloud Run</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <hr class="divider">
+
+    <!-- 03 DECISÕES -->
+    <div class="section">
+      <div class="section-title"><div class="section-num">03</div><h2>Decisões e bloqueios</h2></div>
+      <div class="decisao-card"><div class="decisao-icon bloqueio">🔴</div><div class="decisao-content"><div class="decisao-tag bloqueio">Bloqueio</div><h5>Thesis: liberação de testes aguardando Almap</h5><p>O Thesis permanece em atenção com estímulo vídeo/áudio em 90% e GIF em desenvolvimento. A liberação dos testes está condicionada à resposta da Almap. A análise técnica para desacoplamento Thesis x AI Suite foi iniciada — envolve migração crítica do PostgreSQL e sizing do Worker Celery (mín. 4Gi).</p></div></div>
+      <div class="decisao-card"><div class="decisao-icon pendencia">⚠️</div><div class="decisao-content"><div class="decisao-tag pendencia">Pendência transversal</div><h5>Ausência de feedback da Almap em múltiplos produtos</h5><p>CPM sem retorno há mais de 7 semanas desde entrega do caso de uso. Assets e Thesis aguardam devolutiva de testes. Double Check com baixo engajamento na coleta de feedback. Fluxo MFA aguarda definição de rotina de envio pela Almap em todos os produtos.</p></div></div>
+      <div class="decisao-card"><div class="decisao-icon decisao">✅</div><div class="decisao-content"><div class="decisao-tag decisao">Decisão</div><h5>Synths v2 consolidada como versão definitiva</h5><p>V2 atingiu maturidade técnica com infraestrutura superior à V1: arquitetura escalável, clusterização K-modes, retry automático e fallback de personas. Score 4/4 vs 3/3 da V1. Farol alterado para VERDE. Próxima fase: melhorias contínuas pós-Sprint 7.</p></div></div>
+      <div class="decisao-card"><div class="decisao-icon decisao">✅</div><div class="decisao-content"><div class="decisao-tag decisao">Decisão</div><h5>Levantamento para implementação MS Foundry — pendência Distrito</h5><p>Início do levantamento técnico para eventual implementação do MS Foundry. Item de backlog ativo no lado Distrito.</p></div></div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- 04 PRÓXIMOS PASSOS -->
+    <div class="section">
+      <div class="section-title"><div class="section-num">04</div><h2>Próximos passos</h2></div>
+      <div class="passo-grid">
+        <div class="passo-card"><div class="passo-num">01</div><div class="passo-content"><h5>Concluir vídeo/áudio e liberar testes do Thesis</h5><p>Finalizar os 10% restantes do estímulo vídeo/áudio e o estímulo GIF, e aguardar resposta da Almap para liberação oficial dos testes.</p><div class="passo-meta"><span class="passo-tag resp">Responsável: Almap + Distrito</span><span class="passo-tag projeto">Thesis</span></div></div></div>
+        <div class="passo-card"><div class="passo-num">02</div><div class="passo-content"><h5>Avançar análise técnica de desacoplamento Thesis x AI Suite</h5><p>Concluir o plano de migração PostgreSQL (dump + restore + validação de jobs históricos) e confirmar sizing do Worker Celery no Cloud Run.</p><div class="passo-meta"><span class="passo-tag resp">Responsável: Distrito</span><span class="passo-tag projeto">Thesis</span></div></div></div>
+        <div class="passo-card"><div class="passo-num">03</div><div class="passo-content"><h5>Pressionar Almap por feedback do CPM</h5><p>Solicitar formalmente retorno sobre testes do Importe de Metas — sem feedback desde 03/04 (mais de 7 semanas).</p><div class="passo-meta"><span class="passo-tag resp">Responsável: Almap</span><span class="passo-tag projeto">CPM</span></div></div></div>
+        <div class="passo-card"><div class="passo-num">04</div><div class="passo-content"><h5>Validar Synths v2 em homolog e fechar Sprint 7</h5><p>Almap deve validar melhorias de estabilidade entregues na Semana 18 em homolog para encerramento formal da Sprint 7 e alinhamento do roadmap pós-lançamento.</p><div class="passo-meta"><span class="passo-tag resp">Responsável: Almap</span><span class="passo-tag projeto">Synths</span></div></div></div>
+        <div class="passo-card"><div class="passo-num">05</div><div class="passo-content"><h5>Definir rotina de envio MFA — Almap</h5><p>Almap deve definir a rotina de envio por parte de sua equipe para desbloqueio do fluxo MFA nos produtos ALM, CPM e Double Check.</p><div class="passo-meta"><span class="passo-tag resp">Responsável: Almap</span><span class="passo-tag projeto">Todos</span></div></div></div>
+        <div class="passo-card"><div class="passo-num">06</div><div class="passo-content"><h5>Levantamento MS Foundry — Distrito</h5><p>Avançar no levantamento técnico para eventual implementação do MS Foundry como parte da evolução da infraestrutura da squad.</p><div class="passo-meta"><span class="passo-tag resp">Responsável: Distrito</span><span class="passo-tag projeto">Infraestrutura</span></div></div></div>
+      </div>
+    </div>
+
+    <div class="nota-revisao">
+      <div style="font-size:14px;flex-shrink:0">📋</div>
+      <p><strong>Nota ao PM:</strong> este documento foi gerado automaticamente com base no Status Report de referência (Maio/2026) e Review #7.8 localizados no Google Drive. Revise os campos de próximos passos, prazos e responsáveis antes do envio ao cliente.</p>
+    </div>
+  </div>
+
+  <div class="rpt-footer">
+    <div class="logo">DIST<span>R</span>ITO</div>
+    <div class="rpt-footer-right">AI Factory · AlmapBBDO<br>Status Report — Maio 2026 · Confidencial</div>
+  </div>
+</div>
+
 <!-- ═══════════════════════════════════════════
      HISTÓRICO
 ═══════════════════════════════════════════ -->
@@ -690,34 +917,34 @@ html, body { height: 100%; font-family: 'Red Hat Display', system-ui, sans-serif
   <div class="hist-hero">
     <div class="hero-tag">AI Factory — Squad Dedicada</div>
     <h1>Histórico de relatórios</h1>
-    <p>AlmapBBDO · Setembro 2025 – Abril 2026 · 8 relatórios</p>
+    <p>AlmapBBDO · Setembro 2025 – Maio 2026 · 9 relatórios</p>
   </div>
   <div class="rpt-body" style="padding-top:32px;">
 
     <div class="compare-banner">
       <div class="compare-banner-icon">↗</div>
-      <p>Comparativo <strong>Março vs Abril 2026</strong>: bloqueios aumentaram de 1 para 2 e pendências de 1 para 3 — porém o número de entregas concluídas na Sprint 7 foi o maior do projeto até o momento.</p>
+      <p>Comparativo <strong>Abril vs Maio 2026</strong>: bloqueios reduziram de 2 para 1 — Synths v2 consolidada como versão definitiva. Thesis permanece em atenção; dependência transversal de feedback da Almap persiste nos demais produtos.</p>
     </div>
 
     <div class="compare-grid">
       <div class="compare-card">
-        <div class="compare-header"><div class="compare-header-title">Março 2026</div></div>
+        <div class="compare-header"><div class="compare-header-title">Abril 2026</div></div>
         <div class="compare-body">
-          <div class="compare-row"><span class="compare-lbl">Bloqueios</span><span class="compare-val">1</span></div>
+          <div class="compare-row"><span class="compare-lbl">Bloqueios</span><span class="compare-val">2</span></div>
           <div class="compare-row"><span class="compare-lbl">Pendências ativas</span><span class="compare-val">3</span></div>
           <div class="compare-row"><span class="compare-lbl">Faróis verdes</span><span class="compare-val">3</span></div>
           <div class="compare-row"><span class="compare-lbl">Faróis amarelos</span><span class="compare-val">1</span></div>
-          <div class="compare-row"><span class="compare-lbl">Produtos ativos</span><span class="compare-val">5</span></div>
+          <div class="compare-row"><span class="compare-lbl">Produtos ativos</span><span class="compare-val">4</span></div>
         </div>
       </div>
       <div class="compare-card current-report">
-        <div class="compare-header"><div class="compare-header-title">Abril 2026</div><div class="compare-header-label">atual</div></div>
+        <div class="compare-header"><div class="compare-header-title">Maio 2026</div><div class="compare-header-label">atual</div></div>
         <div class="compare-body">
-          <div class="compare-row"><span class="compare-lbl">Bloqueios</span><span class="compare-val worse">2 ↑</span></div>
-          <div class="compare-row"><span class="compare-lbl">Pendências ativas</span><span class="compare-val worse">3 →</span></div>
-          <div class="compare-row"><span class="compare-lbl">Faróis verdes</span><span class="compare-val same">3 →</span></div>
+          <div class="compare-row"><span class="compare-lbl">Bloqueios</span><span class="compare-val better">1 ↓</span></div>
+          <div class="compare-row"><span class="compare-lbl">Pendências ativas</span><span class="compare-val worse">4 ↑</span></div>
+          <div class="compare-row"><span class="compare-lbl">Faróis verdes</span><span class="compare-val better">4 ↑</span></div>
           <div class="compare-row"><span class="compare-lbl">Faróis amarelos</span><span class="compare-val same">1 →</span></div>
-          <div class="compare-row"><span class="compare-lbl">Produtos ativos</span><span class="compare-val same">4 →</span></div>
+          <div class="compare-row"><span class="compare-lbl">Produtos ativos</span><span class="compare-val better">5 ↑</span></div>
         </div>
       </div>
     </div>
@@ -804,10 +1031,21 @@ html, body { height: 100%; font-family: 'Red Hat Display', system-ui, sans-serif
       <div class="hist-item" onclick="showMonth('abr26')">
         <div class="hist-date-col"><div class="hist-date-label">Abr 2026</div></div>
         <div class="hist-connector"><div class="hist-dot-outer amarelo"><div class="hist-dot-inner amarelo"></div></div></div>
-        <div class="hist-card amarelo current">
-          <div class="hist-card-top"><div class="hist-card-title">Sprint 7 — encerramento</div><span class="hist-card-badge current">Atual</span></div>
+        <div class="hist-card amarelo">
+          <div class="hist-card-top"><div class="hist-card-title">Sprint 7 — encerramento</div><span class="hist-card-badge amarelo">Atenção</span></div>
           <div class="hist-card-desc">Sprint 7 concluída em 3 dos 4 produtos. Synths v2 com maturidade técnica. Thesis aguardando definições da Almap para liberação de testes.</div>
           <div class="hist-card-stats"><span class="hist-stat"><strong>4</strong> squads</span><span class="hist-stat"><strong>2</strong> bloqueios</span><span class="hist-stat"><strong>3</strong> pendências</span></div>
+          <span class="hist-card-link">Ver relatório →</span>
+        </div>
+      </div>
+
+      <div class="hist-item" onclick="showMonth('mai26')">
+        <div class="hist-date-col"><div class="hist-date-label">Mai 2026</div></div>
+        <div class="hist-connector"><div class="hist-dot-outer amarelo"><div class="hist-dot-inner amarelo"></div></div></div>
+        <div class="hist-card amarelo current">
+          <div class="hist-card-top"><div class="hist-card-title">Sprint 7 — semanas finais</div><span class="hist-card-badge current">Atual</span></div>
+          <div class="hist-card-desc">Synths v2 consolidada como versão definitiva. Thesis em atenção aguardando validação Almap. Dependência transversal de feedback persiste em todos os produtos.</div>
+          <div class="hist-card-stats"><span class="hist-stat"><strong>5</strong> squads</span><span class="hist-stat"><strong>1</strong> bloqueio</span><span class="hist-stat"><strong>4</strong> pendências</span></div>
           <span class="hist-card-link">Ver relatório completo →</span>
         </div>
       </div>
@@ -831,7 +1069,7 @@ function showMonth(id) {
     document.getElementById('mainArea').scrollTop = 0;
   }
 
-  const map = { set25:0, out25:1, nov25:2, dez25:3, jan26:4, fev26:5, mar26:6, abr26:7, hist:8 };
+  const map = { set25:0, out25:1, nov25:2, dez25:3, jan26:4, fev26:5, mar26:6, abr26:7, mai26:8, hist:9 };
   const items = document.querySelectorAll('.month-item');
   if (map[id] !== undefined && items[map[id]]) {
     items[map[id]].classList.add('active');
