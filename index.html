@@ -690,7 +690,7 @@ html, body { height: 100%; font-family: 'Red Hat Display', system-ui, sans-serif
   <div class="rpt-header">
     <div class="rpt-header-left">
       <div class="rpt-header-title">Status Report — AlmapBBDO — Maio 2026</div>
-      <div class="rpt-header-sub">AI Factory · Sprint 7 encerrada · Sprint 3 Thesis em andamento · Relatório mais recente</div>
+      <div class="rpt-header-sub">AI Factory · Sprint encerramento · Contrato encerra em Junho/26 · Relatório mais recente</div>
     </div>
     <div class="rpt-header-right">
       <button class="btn-export" onclick="window.print()">Exportar PDF</button>
@@ -717,24 +717,33 @@ html, body { height: 100%; font-family: 'Red Hat Display', system-ui, sans-serif
       <div class="meta-item"><div class="meta-label">Head Delivery</div><div class="meta-val">Pedrão Oliveira</div></div>
       <div class="meta-item"><div class="meta-label">Product Owner</div><div class="meta-val">Vinícius Hessel / Thais Chehab</div></div>
       <div class="meta-item"><div class="meta-label">Início do projeto</div><div class="meta-val">Setembro 2025</div></div>
-      <div class="meta-item"><div class="meta-label">Sprint atual</div><div class="meta-val">Sprint 7 encerrada (22/05) · Thesis Sprint 3</div></div>
+      <div class="meta-item"><div class="meta-label">Status do contrato</div><div class="meta-val" style="color:#f44336;font-weight:600;">Encerra Junho 2026</div></div>
       <div class="meta-item"><div class="meta-label">Produtos ativos</div><div class="meta-val">5 squads</div></div>
     </div>
   </div>
 
   <div class="rpt-body">
+    <!-- ALERTA CONTRATO -->
+    <div style="background:rgba(244,67,54,0.08);border:1px solid rgba(244,67,54,0.3);border-radius:10px;padding:16px 20px;margin-bottom:24px;display:flex;gap:12px;align-items:flex-start;">
+      <div style="font-size:18px;flex-shrink:0">🔴</div>
+      <div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;color:#f44336;text-transform:uppercase;margin-bottom:4px;">Encerramento de contrato</div>
+        <p style="margin:0;font-size:13px;color:var(--fg1);line-height:1.6;">A AlmapBBDO solicitou o encerramento do contrato com a Distrito, que não será renovado após o vencimento em <strong>junho/2026</strong>. A decisão foi baseada em análise de custo-benefício e estratégia de internalização do desenvolvimento de IA. O time está priorizando o <strong>plano de KT (Knowledge Transfer)</strong> — documentação técnica e transferência de código — para garantir total autonomia ao cliente no encerramento.</p>
+      </div>
+    </div>
+
     <!-- 01 STATUS GERAL -->
     <div class="section">
       <div class="section-title"><div class="section-num">01</div><h2>Status geral</h2></div>
       <div class="saude-grid">
         <div class="saude-card">
           <h4>Resumo executivo</h4>
-          <p>Maio marca o encerramento da Sprint 7 em todos os produtos principais. O Synths v2 foi consolidado como versão definitiva com score 4/4 vs 3/3 da v1. O Thesis avança para a Sprint 3 com foco no desacoplamento da AI Suite — entrega prevista para 29/05. A dependência transversal de feedback ativo da Almap persiste como principal risco do mês.</p>
+          <p>Semana de 27/05 trouxe avanços técnicos relevantes em todos os produtos e a confirmação do encerramento do contrato em junho/2026. Synths teve a equiparação V1×V2 validada positivamente por Daniel (Almap). No ALM, renomeação automática de assets foi entregue. O Thesis avança com Container Docker em andamento e upload direto para GCS concluído. Time priorizará KT e documentação técnica para handover.</p>
         </div>
         <div class="saude-card">
           <h4>Score de risco do mês</h4>
           <div class="score-wrap">
-            <div class="score-item warn"><div class="score-num">1</div><div class="score-label">Bloqueios</div></div>
+            <div class="score-item warn"><div class="score-num">2</div><div class="score-label">Bloqueios</div></div>
             <div class="score-item warn"><div class="score-num">4</div><div class="score-label">Pendências ativas</div></div>
             <div class="score-item ok"><div class="score-num">4</div><div class="score-label">Faróis verdes</div></div>
             <div class="score-item info"><div class="score-num">1</div><div class="score-label">Farol amarelo</div></div>
@@ -747,7 +756,7 @@ html, body { height: 100%; font-family: 'Red Hat Display', system-ui, sans-serif
 
     <!-- 02 ATIVIDADES -->
     <div class="section">
-      <div class="section-title"><div class="section-num">02</div><h2>Resumo de atividades — Sprint 7 (encerramento)</h2></div>
+      <div class="section-title"><div class="section-num">02</div><h2>Resumo de atividades — última semana (27/05)</h2></div>
 
       <!-- SYNTHS -->
       <div class="projeto-card">
@@ -757,22 +766,20 @@ html, body { height: 100%; font-family: 'Red Hat Display', system-ui, sans-serif
         </div>
         <div class="projeto-body">
           <div class="proj-col">
-            <h5>Entregas Sprint 7 — últimas semanas</h5>
-            <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">Geração assíncrona de roteiros via Celery — timeout eliminado, polling no frontend</div><div class="entrega-date">22/05 · Done</div></div></div>
-            <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">Critérios predefinidos e fluxo de objetivos</div><div class="entrega-date">22/05 · Done</div></div></div>
-            <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">Exportação de PDF reescrita (pdfmake) — PDF em branco e texto cortado corrigidos</div><div class="entrega-date">22/05 · Done</div></div></div>
-            <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">Estabilidade WebSocket + Observabilidade Langfuse (tracing por persona)</div><div class="entrega-date">22/05 · Done</div></div></div>
-            <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">Atividade recente, estabilidade e dashboard (FE)</div><div class="entrega-date">15/05 · Done</div></div></div>
-            <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">Entrevistas em lote e personas mais rápidas (BE)</div><div class="entrega-date">15/05 · Done</div></div></div>
-            <div class="entrega-item"><div class="entrega-dot waiting"></div><div><div class="entrega-text">Migração do serviço de autenticação</div><div class="entrega-date">Backlog</div></div></div>
+            <h5>Atualizações da semana</h5>
+            <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">Equiparação V1×V2 validada com sucesso — feedback positivo de Daniel (Almap)</div><div class="entrega-date">27/05 · Validado</div></div></div>
+            <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">Ponto de melhoria de Daniel sobre estímulos de vídeo esclarecido: diferença é característica da geração por IA, não falha técnica (Rafael Mayer)</div><div class="entrega-date">27/05 · Esclarecido</div></div></div>
+            <div class="entrega-item"><div class="entrega-dot progress"></div><div><div class="entrega-text">Thais complementará material de equiparação com os pontos de melhoria de Daniel</div><div class="entrega-date">Em andamento</div></div></div>
+            <h5 style="margin-top:16px;">Entregas Sprint 7 (já entregues)</h5>
+            <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">Geração assíncrona de roteiros via Celery, PDF reescrito (pdfmake), WebSocket estabilizado</div><div class="entrega-date">22/05 · Done</div></div></div>
+            <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">V2 consolidada: score 4/4 vs 3/3 da V1 — arquitetura escalável, retry automático, fallback</div><div class="entrega-date">Done</div></div></div>
           </div>
           <div class="proj-col">
             <h5>Pendências e riscos</h5>
             <ul class="alerta-list">
-              <li class="pendencia">Validação em homolog pela Almap — aguardando retorno</li>
-              <li class="pendencia">Alinhamento de roadmap pós-Sprint 7 com Daniel (pauta 15/05)</li>
-              <li class="pendencia">Apresentação da equiparação V1×V2 — Semana 19 (25–29/05)</li>
-              <li class="risco">V2 consolidada como versão definitiva (score 4/4 vs 3/3 da V1) — migração para produção aguarda validação Almap</li>
+              <li class="pendencia">Agendar conversa com Almap sobre pontos de melhoria (Thais conduz agenda)</li>
+              <li class="pendencia">Complementar material de equiparação com feedbacks de Daniel</li>
+              <li class="risco">Encerramento do contrato em junho — plano de KT em elaboração</li>
             </ul>
           </div>
         </div>
@@ -786,21 +793,19 @@ html, body { height: 100%; font-family: 'Red Hat Display', system-ui, sans-serif
         </div>
         <div class="projeto-body">
           <div class="proj-col">
-            <h5>Entregas Sprint 7 — últimas semanas</h5>
-            <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">Relatório Gerencial LangFuse [AI Suite]</div><div class="entrega-date">22/05 · Done</div></div></div>
-            <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">Zip para cada Marca [ALM]</div><div class="entrega-date">22/05 · Done</div></div></div>
-            <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">Desacoplamento SDK Gemini — provider como escolha, não dependência</div><div class="entrega-date">22/05 · Done</div></div></div>
-            <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">Recuperação de assets — Cores e variantes</div><div class="entrega-date">15/05 · Done</div></div></div>
-            <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">Alteração fluxo MFA para API Distrito [AI Suite]</div><div class="entrega-date">15/05 · Done</div></div></div>
-            <div class="entrega-item"><div class="entrega-dot progress"></div><div><div class="entrega-text">Teste de Carga/Estresse (Almap)</div><div class="entrega-date">Em andamento — resultado Semana 19</div></div></div>
+            <h5>Atualizações da semana</h5>
+            <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">[ALM] Renomeação automática de Assets — entregue (#3820 Done)</div><div class="entrega-date">Done · Rodrigo Cattoi</div></div></div>
+            <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">Feature Champion: direciona para responsável da marca quando item não localizado, sugere zip correspondente</div><div class="entrega-date">Done</div></div></div>
+            <div class="entrega-item"><div class="entrega-dot progress"></div><div><div class="entrega-text">[ALM] Validação de Assets (#3821) — em fila (To Do, Rodrigo Cattoi)</div><div class="entrega-date">To Do</div></div></div>
+            <div class="entrega-item"><div class="entrega-dot progress"></div><div><div class="entrega-text">Proposta de renomeação com etapa intermediária de validação (varredura sugestiva — aceitar/editar/rejeitar) a ser apresentada à Almap na próxima sexta</div><div class="entrega-date">A apresentar 29/05</div></div></div>
           </div>
           <div class="proj-col">
             <h5>Pendências e riscos</h5>
             <ul class="alerta-list">
-              <li class="pendencia">Testes e devolutiva da Almap — aguardando</li>
-              <li class="pendencia">Aguardando envio de usuários via API (AI Suite)</li>
-              <li class="pendencia">Definição de rotina de envio MFA por parte da Almap</li>
-              <li class="risco">Acompanhar adoção e coleta de feedback das melhorias da sprint</li>
+              <li class="pendencia">Apresentar proposta de renomeação intermediária ao cliente (30/05)</li>
+              <li class="pendencia">Aguardar devolutiva e feedback da Almap sobre testes</li>
+              <li class="risco">Renomeação automática pode afetar arquivos já corretamente nomeados — abordagem sugestiva mitiga risco</li>
+              <li class="risco">Limitação atual: sem processamento para vídeos e PDFs acima de 10MB</li>
             </ul>
           </div>
         </div>
@@ -809,24 +814,20 @@ html, body { height: 100%; font-family: 'Red Hat Display', system-ui, sans-serif
       <!-- CPM -->
       <div class="projeto-card">
         <div class="projeto-header">
-          <div class="projeto-header-left"><div class="projeto-nome">Conversor de Plano — CPM</div><div class="projeto-info">PO: Vinícius Hessel · Início: Set/2025 · Sprint 7: 16/03 – 14/04 (encerrada)</div></div>
+          <div class="projeto-header-left"><div class="projeto-nome">Conversor de Plano — CPM</div><div class="projeto-info">PO: Vinícius Hessel · Início: Set/2025 · Sprint 7 encerrada (14/04)</div></div>
           <div class="farol-pill verde">Verde</div>
         </div>
         <div class="projeto-body">
           <div class="proj-col">
-            <h5>Situação — Sprint 7 encerrada</h5>
-            <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">Importe de Metas entregue e integrado ao front-end</div><div class="entrega-date">03/04 · Done</div></div></div>
-            <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">Log Detalhado e Relatório de Transformação</div><div class="entrega-date">10/04 · Done</div></div></div>
-            <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">Reunião de entrega com área de negócios realizada</div><div class="entrega-date">14/04 · Done</div></div></div>
-            <div class="entrega-item"><div class="entrega-dot waiting"></div><div><div class="entrega-text">Sem feedback desde entrega do caso de uso — +7 semanas</div><div class="entrega-date">03/04 → Aguardando Almap</div></div></div>
+            <h5>Situação atual</h5>
+            <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">Sprint 7 encerrada com todas as entregas concluídas (Importe de Metas, Log Detalhado, Manual de uso)</div><div class="entrega-date">14/04 · Done</div></div></div>
+            <div class="entrega-item"><div class="entrega-dot waiting"></div><div><div class="entrega-text">Sem feedback desde entrega do caso de uso — +7 semanas sem retorno da Almap</div><div class="entrega-date">Desde 03/04</div></div></div>
           </div>
           <div class="proj-col">
             <h5>Pendências e riscos</h5>
             <ul class="alerta-list">
-              <li class="pendencia">Realização de testes e devolutiva pela Almap — sem retorno há +7 semanas</li>
               <li class="pendencia">Relatório Gerencial de casos de uso pendente</li>
-              <li class="risco">Acurácia em diferentes tipos de planos de mídia — validação pendente</li>
-              <li class="risco">Falta de feedback e baixa adoção da ferramenta</li>
+              <li class="risco">Falta de feedback e baixa adoção — encerramento do contrato agrava risco de não utilização</li>
             </ul>
           </div>
         </div>
@@ -840,17 +841,16 @@ html, body { height: 100%; font-family: 'Red Hat Display', system-ui, sans-serif
         </div>
         <div class="projeto-body">
           <div class="proj-col">
-            <h5>Entregas Sprint 4</h5>
-            <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">Implementação do Langfuse</div><div class="entrega-date">13/02 · Done</div></div></div>
-            <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">Alteração fluxo MFA para API Distrito e Almap — aumenta segurança e autonomia</div><div class="entrega-date">15/05 · Done</div></div></div>
-            <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">Testes de precisão contínuos e correções de falsos positivos/negativos</div><div class="entrega-date">Contínuo</div></div></div>
+            <h5>Situação atual</h5>
+            <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">Sprint 4 encerrada — Langfuse e MFA para API Distrito concluídos</div><div class="entrega-date">15/05 · Done</div></div></div>
+            <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">Testes de precisão contínuos, correções de falsos positivos/negativos</div><div class="entrega-date">Contínuo</div></div></div>
+            <div class="entrega-item"><div class="entrega-dot waiting"></div><div><div class="entrega-text">Expandir para outras áreas de negócio — proposta em aberto</div><div class="entrega-date">Pendente</div></div></div>
           </div>
           <div class="proj-col">
             <h5>Pendências e riscos</h5>
             <ul class="alerta-list">
-              <li class="pendencia">Coleta de feedback — baixo engajamento da equipe piloto</li>
-              <li class="pendencia">Definição de rotina de envio MFA por parte da Almap</li>
-              <li class="risco">Dependência da disponibilidade da equipe piloto para feedback e testes</li>
+              <li class="pendencia">Baixo engajamento da equipe piloto nas avaliações</li>
+              <li class="risco">Encerramento do contrato pode interromper ciclo de melhoria antes de consolidação</li>
             </ul>
           </div>
         </div>
@@ -864,20 +864,45 @@ html, body { height: 100%; font-family: 'Red Hat Display', system-ui, sans-serif
         </div>
         <div class="projeto-body">
           <div class="proj-col">
-            <h5>Entregas Sprint 3 (em andamento)</h5>
-            <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">Todos os estímulos concluídos: imagem, vídeo, áudio e gif</div><div class="entrega-date">Done</div></div></div>
-            <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">Replicação de parâmetros Meta → TikTok e Google — cobertura multicanal</div><div class="entrega-date">15/05 · Done</div></div></div>
-            <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">Análise técnica para desacoplamento Thesis × AI Suite concluída</div><div class="entrega-date">15/05 · Done</div></div></div>
-            <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">Ajuste limite Cloud Run 30MB (Gif e Vídeo) / nomenclatura gif</div><div class="entrega-date">22/05 · Done</div></div></div>
-            <div class="entrega-item"><div class="entrega-dot progress"></div><div><div class="entrega-text">Desacoplamento Thesis × AI Suite (Setup GCP, Cloud SQL, Worker Celery, CI/CD)</div><div class="entrega-date">29/05 · In Progress · est. 17–29h</div></div></div>
+            <h5>Atualizações da semana</h5>
+            <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">[Thesis] Upload direto da mídia no GCS — concluído (#3816 Done)</div><div class="entrega-date">Done</div></div></div>
+            <div class="entrega-item"><div class="entrega-dot progress"></div><div><div class="entrega-text">Container Docker [Thesis] — em andamento (#3834, Eduardo Anaxagoras)</div><div class="entrega-date">Doing IA</div></div></div>
+            <div class="entrega-item"><div class="entrega-dot progress"></div><div><div class="entrega-text">Ajuste de capacidade de upload para vídeos e GIFs mais pesados — em desenvolvimento</div><div class="entrega-date">Em andamento</div></div></div>
+            <div class="entrega-item"><div class="entrega-dot progress"></div><div><div class="entrega-text">Desacoplamento Thesis × AI Suite (Setup GCP, Cloud SQL, Worker Celery, CI/CD) — previsto 29/05</div><div class="entrega-date">In Progress · est. 17–29h</div></div></div>
+            <div class="entrega-item"><div class="entrega-dot waiting"></div><div><div class="entrega-text">[Thesis] item #3813 — To Do</div><div class="entrega-date">A iniciar</div></div></div>
           </div>
           <div class="proj-col">
             <h5>Pendências e riscos</h5>
             <ul class="alerta-list">
               <li class="pendencia">Testes e devolutiva pela Almap — aguardando</li>
               <li class="pendencia">Logo e descrição de TODOS os casos de uso — pendente com Almap</li>
-              <li class="pendencia">Aguardando envio de usuários via API (AI Suite)</li>
-              <li class="risco">Desacoplamento: migração PostgreSQL crítica (dump + restore + validação de jobs) — Worker Celery mínimo 4Gi memória</li>
+              <li class="risco">Desacoplamento: migração PostgreSQL crítica — Worker Celery mínimo 4Gi memória</li>
+              <li class="risco">Encerramento do contrato em junho pode interromper desacoplamento antes da conclusão</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- FOUNDRY (ESTUDO) -->
+      <div class="projeto-card">
+        <div class="projeto-header">
+          <div class="projeto-header-left"><div class="projeto-nome">Estudo Foundry — <a href="https://docs.google.com/presentation/d/1xbR-8Ss1WINgqGudYXbdB8wDNVrytil82Dzvp7_oI7E/edit" target="_blank" style="color:var(--brand);font-weight:400;font-size:12px;">ver apresentação →</a></div><div class="projeto-info">Rodrigo Cattoi · Thais Chehab · Vinícius Hessel</div></div>
+          <div class="farol-pill verde">Concluído</div>
+        </div>
+        <div class="projeto-body">
+          <div class="proj-col">
+            <h5>Estudo finalizado — a apresentar 29/05</h5>
+            <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">Problema identificado: dependência exclusiva do Gemini (sem fallback) — risco de paralisação total</div><div class="entrega-date">Done</div></div></div>
+            <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">Solução proposta: Azure AI Foundry como hub central de modelos, alinhado à tecnologia Microsoft</div><div class="entrega-date">Done</div></div></div>
+            <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">Resiliência: Foundry como provedor primário + Gemini-SDK como fallback automático silencioso — zero downtime, streaming e multimodal preservados</div><div class="entrega-date">Done</div></div></div>
+            <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">Plano de ação: implementação em 5 dias úteis (staging, sem deploy em produção) — Dia 1 validação técnica, Dias 2–4 integração, Dia 5 homologação e testes</div><div class="entrega-date">Done</div></div></div>
+          </div>
+          <div class="proj-col">
+            <h5>Próximos passos</h5>
+            <ul class="alerta-list">
+              <li class="pendencia">Apresentar estudo ao cliente na sexta-feira (29/05)</li>
+              <li class="pendencia">Alinhamento ágil de devolutivas essencial para manter o ritmo da implementação</li>
+              <li class="risco">Fluxo lento de devolutivas pode comprometer execução antes do encerramento do contrato</li>
             </ul>
           </div>
         </div>
@@ -890,10 +915,10 @@ html, body { height: 100%; font-family: 'Red Hat Display', system-ui, sans-serif
     <!-- 03 DECISÕES -->
     <div class="section">
       <div class="section-title"><div class="section-num">03</div><h2>Decisões e bloqueios</h2></div>
-      <div class="decisao-card"><div class="decisao-icon bloqueio">🔴</div><div class="decisao-content"><div class="decisao-tag bloqueio">Bloqueio</div><h5>Thesis: desacoplamento em andamento — testes aguardando Almap</h5><p>O Thesis avançou para Sprint 3 com foco no desacoplamento da AI Suite (estimativa 17–29h, entrega 29/05). Todos os estímulos foram entregues. A liberação de testes permanece condicionada à resposta da Almap.</p></div></div>
-      <div class="decisao-card"><div class="decisao-icon pendencia">⚠️</div><div class="decisao-content"><div class="decisao-tag pendencia">Pendência transversal</div><h5>Ausência de feedback da Almap em múltiplos produtos</h5><p>CPM sem retorno há mais de 7 semanas desde entrega (03/04). Assets e Thesis aguardam devolutiva de testes. Double Check com baixo engajamento na coleta de feedback. Definição de rotina de envio MFA pendente em todos os produtos.</p></div></div>
-      <div class="decisao-card"><div class="decisao-icon decisao">✅</div><div class="decisao-content"><div class="decisao-tag decisao">Decisão</div><h5>Synths v2 consolidada como versão definitiva — Sprint 7 encerrada em 22/05</h5><p>V2 atingiu score 4/4 vs 3/3 da V1. Arquitetura escalável, retry automático, fallback de personas. Geração assíncrona via Celery, PDF corrigido, WebSocket estabilizado e Langfuse com tracing por persona entregues em 22/05. Próximo passo: validação com Daniel/Almap na Semana 19.</p></div></div>
-      <div class="decisao-card"><div class="decisao-icon decisao">✅</div><div class="decisao-content"><div class="decisao-tag decisao">Decisão técnica</div><h5>Desacoplamento SDK Gemini concluído — ALM/AI Suite</h5><p>Todos os agentes da AI Suite foram desacoplados do SDK Gemini. O provider se tornou uma escolha, não uma dependência estrutural, aumentando resiliência e flexibilidade para toda a plataforma.</p></div></div>
+      <div class="decisao-card"><div class="decisao-icon bloqueio">🔴</div><div class="decisao-content"><div class="decisao-tag bloqueio">Decisão crítica</div><h5>Encerramento do contrato com AlmapBBDO — Junho 2026</h5><p>A AlmapBBDO solicitou o encerramento do contrato, que não será renovado após o vencimento em junho/2026. Motivação: análise de custo-benefício e estratégia de internalização do desenvolvimento de IA. O time priorizará KT (Knowledge Transfer) — documentação técnica, transferência de código-fonte e handover — garantindo 30 dias de suporte pós-término conforme política de boa vizinhança.</p></div></div>
+      <div class="decisao-card"><div class="decisao-icon bloqueio">🔴</div><div class="decisao-content"><div class="decisao-tag bloqueio">Atenção de equipe</div><h5>Miraco afastado por motivos de saúde</h5><p>Miraco estará ausente por algumas semanas. As interações das próximas sprints estarão concentradas no time de Renato e Beira (Almap), especialmente para Thesis e ALM.</p></div></div>
+      <div class="decisao-card"><div class="decisao-icon decisao">✅</div><div class="decisao-content"><div class="decisao-tag decisao">Decisão</div><h5>Synths v2: equiparação V1×V2 validada por Daniel (Almap)</h5><p>Daniel enviou feedback positivo confirmando a equiparação das versões. Ponto de melhoria sobre estímulos de vídeo foi esclarecido por Rafael Mayer: a diferença observada é característica da geração por IA, não uma falha técnica. Pedrão recomendou agendar conversa (não reunião de encerramento formal) para manter diálogo aberto para possível 2ª fase.</p></div></div>
+      <div class="decisao-card"><div class="decisao-icon decisao">✅</div><div class="decisao-content"><div class="decisao-tag decisao">Decisão técnica</div><h5>ALM: renomeação automática com abordagem intermediária</h5><p>Em vez de renomeação automática obrigatória, o time adotará abordagem sugestiva: varredura para identificar arquivos com nomes genéricos, com opção de aceitar, editar ou rejeitar cada sugestão. Mitigação do risco de renomear arquivos já corretamente nomeados. Proposta será apresentada ao cliente na sexta-feira (30/05).</p></div></div>
     </div>
 
     <hr class="divider">
@@ -902,18 +927,18 @@ html, body { height: 100%; font-family: 'Red Hat Display', system-ui, sans-serif
     <div class="section">
       <div class="section-title"><div class="section-num">04</div><h2>Próximos passos</h2></div>
       <div class="passo-grid">
-        <div class="passo-card"><div class="passo-num">01</div><div class="passo-content"><h5>Concluir desacoplamento Thesis × AI Suite</h5><p>Finalizar Setup GCP, Cloud SQL, Worker Celery e CI/CD. Entrega prevista para 29/05 (estimativa 17–29h). Migração PostgreSQL é o ponto crítico.</p><div class="passo-meta"><span class="passo-tag resp">Responsável: Distrito</span><span class="passo-tag projeto">Thesis</span></div></div></div>
-        <div class="passo-card"><div class="passo-num">02</div><div class="passo-content"><h5>Apresentação V1×V2 e alinhamento de roadmap — Semana 19</h5><p>Validar equiparação de versões com Daniel/Almap (25–29/05) e definir funcionalidades pós-Sprint 7 do Synths.</p><div class="passo-meta"><span class="passo-tag resp">Responsável: Almap + Distrito</span><span class="passo-tag projeto">Synths</span></div></div></div>
-        <div class="passo-card"><div class="passo-num">03</div><div class="passo-content"><h5>Liberar testes do Thesis para Almap</h5><p>Após conclusão do desacoplamento, coordenar com Almap a liberação dos testes de todos os estímulos entregues.</p><div class="passo-meta"><span class="passo-tag resp">Responsável: Almap + Distrito</span><span class="passo-tag projeto">Thesis</span></div></div></div>
-        <div class="passo-card"><div class="passo-num">04</div><div class="passo-content"><h5>Resultado do Teste de Carga/Estresse — ALM</h5><p>Concluir e apresentar resultado do teste de carga/estresse da Almap previsto para Semana 19.</p><div class="passo-meta"><span class="passo-tag resp">Responsável: Distrito</span><span class="passo-tag projeto">Assets/ALM</span></div></div></div>
-        <div class="passo-card"><div class="passo-num">05</div><div class="passo-content"><h5>Pressionar Almap por feedback do CPM</h5><p>Solicitar formalmente retorno sobre testes do Importe de Metas — sem feedback desde 03/04 (+7 semanas). Risco de baixa adoção se não houver resposta.</p><div class="passo-meta"><span class="passo-tag resp">Responsável: Almap</span><span class="passo-tag projeto">CPM</span></div></div></div>
-        <div class="passo-card"><div class="passo-num">06</div><div class="passo-content"><h5>Definir rotina de envio MFA — Almap</h5><p>Almap deve definir rotina de envio MFA para desbloqueio em ALM, CPM, Double Check e Synths.</p><div class="passo-meta"><span class="passo-tag resp">Responsável: Almap</span><span class="passo-tag projeto">Todos</span></div></div></div>
+        <div class="passo-card"><div class="passo-num">01</div><div class="passo-content"><h5>Definir estratégia de encerramento com Almap</h5><p>Thais e Pedrão alinham comunicado e condução da reunião de encerramento. Objetivo: encerrar com qualidade e manter porta aberta para 2ª fase.</p><div class="passo-meta"><span class="passo-tag resp">Responsável: Thais + Pedrão</span><span class="passo-tag projeto">Contrato</span></div></div></div>
+        <div class="passo-card"><div class="passo-num">02</div><div class="passo-content"><h5>Executar plano de KT (Knowledge Transfer)</h5><p>Priorizar documentação técnica e transferência de código-fonte para garantir autonomia total ao cliente. Meta: encerrar antes da realocação da equipe.</p><div class="passo-meta"><span class="passo-tag resp">Responsável: Squad</span><span class="passo-tag projeto">Todos</span></div></div></div>
+        <div class="passo-card"><div class="passo-num">03</div><div class="passo-content"><h5>Apresentar proposta de renomeação e estudo Foundry (29/05)</h5><p>Squad apresenta à Almap: (1) nova solução de renomeação com validação intermediária e (2) estudo de implementação do Foundry.</p><div class="passo-meta"><span class="passo-tag resp">Responsável: Rodrigo, Vinícius, Thais</span><span class="passo-tag projeto">ALM + Foundry</span></div></div></div>
+        <div class="passo-card"><div class="passo-num">04</div><div class="passo-content"><h5>Agendar conversa de alinhamento sobre Synths</h5><p>Thais conduz agenda para discutir pontos de melhoria de Daniel e complementar material de equiparação. Não é reunião de encerramento — manter diálogo aberto.</p><div class="passo-meta"><span class="passo-tag resp">Responsável: Thais</span><span class="passo-tag projeto">Synths</span></div></div></div>
+        <div class="passo-card"><div class="passo-num">05</div><div class="passo-content"><h5>Concluir desacoplamento Thesis × AI Suite (29/05)</h5><p>Finalizar Container Docker, Setup GCP, Cloud SQL e CI/CD. Ponto crítico: migração PostgreSQL e sizing Worker Celery (mín. 4Gi).</p><div class="passo-meta"><span class="passo-tag resp">Responsável: Eduardo Anaxagoras</span><span class="passo-tag projeto">Thesis</span></div></div></div>
+        <div class="passo-card"><div class="passo-num">06</div><div class="passo-content"><h5>Interações Thesis/ALM concentradas em Renato e Beira</h5><p>Com Miraco afastado por motivos de saúde, direcionar todas as comunicações com o cliente para o time de Renato e Beira nas próximas sprints.</p><div class="passo-meta"><span class="passo-tag resp">Responsável: Squad</span><span class="passo-tag projeto">Thesis + ALM</span></div></div></div>
       </div>
     </div>
 
     <div class="nota-revisao">
       <div style="font-size:14px;flex-shrink:0">📋</div>
-      <p><strong>Nota ao PM:</strong> este documento foi gerado automaticamente com base no Status Report de referência (Maio/2026) e Review #7.8 de 22/05/2026 localizados no Google Drive.</p>
+      <p><strong>Nota ao PM:</strong> atualizado com base no Weekly Report de 27/05/2026 e Status Report Maio/26 do Google Drive. Revise os campos de KT, prazos de encerramento e responsáveis antes de compartilhar com o cliente.</p>
     </div>
   </div>
 
