@@ -796,8 +796,7 @@ html, body { height: 100%; font-family: 'Red Hat Display', system-ui, sans-serif
             <h5>Atualizações da semana</h5>
             <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">[ALM] Renomeação automática de Assets — entregue (#3820 Done)</div><div class="entrega-date">Done · Rodrigo Cattoi</div></div></div>
             <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">Feature Champion: direciona para responsável da marca quando item não localizado, sugere zip correspondente</div><div class="entrega-date">Done</div></div></div>
-            <div class="entrega-item"><div class="entrega-dot progress"></div><div><div class="entrega-text">[ALM] Validação de Assets (#3821) — em fila (To Do, Rodrigo Cattoi)</div><div class="entrega-date">To Do</div></div></div>
-            <div class="entrega-item"><div class="entrega-dot progress"></div><div><div class="entrega-text">Proposta de renomeação com etapa intermediária de validação (varredura sugestiva — aceitar/editar/rejeitar) a ser apresentada à Almap na próxima sexta</div><div class="entrega-date">A apresentar 29/05</div></div></div>
+            <div class="entrega-item"><div class="entrega-dot progress"></div><div><div class="entrega-text">Alinhamento sobre renomeação com etapa intermediária de validação (varredura sugestiva — aceitar/editar/rejeitar)</div><div class="entrega-date">In progress</div></div></div>
           </div>
           <div class="proj-col">
             <h5>Pendências e riscos</h5>
@@ -850,7 +849,6 @@ html, body { height: 100%; font-family: 'Red Hat Display', system-ui, sans-serif
             <h5>Pendências e riscos</h5>
             <ul class="alerta-list">
               <li class="pendencia">Baixo engajamento da equipe piloto nas avaliações</li>
-              <li class="risco">Encerramento do contrato pode interromper ciclo de melhoria antes de consolidação</li>
             </ul>
           </div>
         </div>
@@ -868,15 +866,14 @@ html, body { height: 100%; font-family: 'Red Hat Display', system-ui, sans-serif
             <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">[Thesis] Upload direto da mídia no GCS — concluído (#3816 Done)</div><div class="entrega-date">Done</div></div></div>
             <div class="entrega-item"><div class="entrega-dot progress"></div><div><div class="entrega-text">Container Docker [Thesis] — em andamento (#3834, Eduardo Anaxagoras)</div><div class="entrega-date">Doing IA</div></div></div>
             <div class="entrega-item"><div class="entrega-dot progress"></div><div><div class="entrega-text">Ajuste de capacidade de upload para vídeos e GIFs mais pesados — em desenvolvimento</div><div class="entrega-date">Em andamento</div></div></div>
-            <div class="entrega-item"><div class="entrega-dot progress"></div><div><div class="entrega-text">Desacoplamento Thesis × AI Suite (Setup GCP, Cloud SQL, Worker Celery, CI/CD) — previsto 29/05</div><div class="entrega-date">In Progress · est. 17–29h</div></div></div>
+            <div class="entrega-item"><div class="entrega-dot progress"></div><div><div class="entrega-text">Desacoplamento Thesis × AI Suite (Setup GCP, Cloud SQL, Worker Celery, CI/CD)</div><div class="entrega-date">In Progress</div></div></div>
             <div class="entrega-item"><div class="entrega-dot waiting"></div><div><div class="entrega-text">[Thesis] item #3813 — To Do</div><div class="entrega-date">A iniciar</div></div></div>
           </div>
           <div class="proj-col">
             <h5>Pendências e riscos</h5>
             <ul class="alerta-list">
               <li class="pendencia">Testes e devolutiva pela Almap — aguardando</li>
-              <li class="pendencia">Logo e descrição de TODOS os casos de uso — pendente com Almap</li>
-              <li class="risco">Desacoplamento: migração PostgreSQL crítica — Worker Celery mínimo 4Gi memória</li>
+              <li class="risco">Desacoplamento Thesis × AI Suite</li>
               <li class="risco">Encerramento do contrato em junho pode interromper desacoplamento antes da conclusão</li>
             </ul>
           </div>
@@ -916,9 +913,8 @@ html, body { height: 100%; font-family: 'Red Hat Display', system-ui, sans-serif
     <div class="section">
       <div class="section-title"><div class="section-num">03</div><h2>Decisões e bloqueios</h2></div>
       <div class="decisao-card"><div class="decisao-icon bloqueio">🔴</div><div class="decisao-content"><div class="decisao-tag bloqueio">Decisão crítica</div><h5>Encerramento do contrato com AlmapBBDO — Junho 2026</h5><p>A AlmapBBDO solicitou o encerramento do contrato, que não será renovado após o vencimento em junho/2026. Motivação: análise de custo-benefício e estratégia de internalização do desenvolvimento de IA. O time priorizará KT (Knowledge Transfer) — documentação técnica, transferência de código-fonte e handover — garantindo 30 dias de suporte pós-término conforme política de boa vizinhança.</p></div></div>
-      <div class="decisao-card"><div class="decisao-icon bloqueio">🔴</div><div class="decisao-content"><div class="decisao-tag bloqueio">Atenção de equipe</div><h5>Miraco afastado por motivos de saúde</h5><p>Miraco estará ausente por algumas semanas. As interações das próximas sprints estarão concentradas no time de Renato e Beira (Almap), especialmente para Thesis e ALM.</p></div></div>
       <div class="decisao-card"><div class="decisao-icon decisao">✅</div><div class="decisao-content"><div class="decisao-tag decisao">Decisão</div><h5>Synths v2: equiparação V1×V2 validada por Daniel (Almap)</h5><p>Daniel enviou feedback positivo confirmando a equiparação das versões. Ponto de melhoria sobre estímulos de vídeo foi esclarecido por Rafael Mayer: a diferença observada é característica da geração por IA, não uma falha técnica. Pedrão recomendou agendar conversa (não reunião de encerramento formal) para manter diálogo aberto para possível 2ª fase.</p></div></div>
-      <div class="decisao-card"><div class="decisao-icon decisao">✅</div><div class="decisao-content"><div class="decisao-tag decisao">Decisão técnica</div><h5>ALM: renomeação automática com abordagem intermediária</h5><p>Em vez de renomeação automática obrigatória, o time adotará abordagem sugestiva: varredura para identificar arquivos com nomes genéricos, com opção de aceitar, editar ou rejeitar cada sugestão. Mitigação do risco de renomear arquivos já corretamente nomeados. Proposta será apresentada ao cliente na sexta-feira (30/05).</p></div></div>
+      <div class="decisao-card"><div class="decisao-icon decisao">✅</div><div class="decisao-content"><div class="decisao-tag decisao">Decisão técnica</div><h5>ALM: renomeação automática com abordagem intermediária</h5><p>Em vez de renomeação automática obrigatória, o time adotará abordagem sugestiva: varredura para identificar arquivos com nomes genéricos, com opção de aceitar, editar ou rejeitar cada sugestão. Mitigação do risco de renomear arquivos já corretamente nomeados.</p></div></div>
     </div>
 
     <hr class="divider">
@@ -931,15 +927,12 @@ html, body { height: 100%; font-family: 'Red Hat Display', system-ui, sans-serif
         <div class="passo-card"><div class="passo-num">02</div><div class="passo-content"><h5>Executar plano de KT (Knowledge Transfer)</h5><p>Priorizar documentação técnica e transferência de código-fonte para garantir autonomia total ao cliente. Meta: encerrar antes da realocação da equipe.</p><div class="passo-meta"><span class="passo-tag resp">Responsável: Squad</span><span class="passo-tag projeto">Todos</span></div></div></div>
         <div class="passo-card"><div class="passo-num">03</div><div class="passo-content"><h5>Apresentar proposta de renomeação e estudo Foundry (29/05)</h5><p>Squad apresenta à Almap: (1) nova solução de renomeação com validação intermediária e (2) estudo de implementação do Foundry.</p><div class="passo-meta"><span class="passo-tag resp">Responsável: Rodrigo, Vinícius, Thais</span><span class="passo-tag projeto">ALM + Foundry</span></div></div></div>
         <div class="passo-card"><div class="passo-num">04</div><div class="passo-content"><h5>Agendar conversa de alinhamento sobre Synths</h5><p>Thais conduz agenda para discutir pontos de melhoria de Daniel e complementar material de equiparação. Não é reunião de encerramento — manter diálogo aberto.</p><div class="passo-meta"><span class="passo-tag resp">Responsável: Thais</span><span class="passo-tag projeto">Synths</span></div></div></div>
-        <div class="passo-card"><div class="passo-num">05</div><div class="passo-content"><h5>Concluir desacoplamento Thesis × AI Suite (29/05)</h5><p>Finalizar Container Docker, Setup GCP, Cloud SQL e CI/CD. Ponto crítico: migração PostgreSQL e sizing Worker Celery (mín. 4Gi).</p><div class="passo-meta"><span class="passo-tag resp">Responsável: Eduardo Anaxagoras</span><span class="passo-tag projeto">Thesis</span></div></div></div>
+        <div class="passo-card"><div class="passo-num">05</div><div class="passo-content"><h5>Concluir desacoplamento Thesis × AI Suite</h5><p>Finalizar Container Docker, Setup GCP, Cloud SQL e CI/CD. Ponto crítico: migração PostgreSQL e sizing Worker Celery (mín. 4Gi).</p><div class="passo-meta"><span class="passo-tag resp">Responsável: Eduardo Anaxagoras</span><span class="passo-tag projeto">Thesis</span></div></div></div>
         <div class="passo-card"><div class="passo-num">06</div><div class="passo-content"><h5>Interações Thesis/ALM concentradas em Renato e Beira</h5><p>Com Miraco afastado por motivos de saúde, direcionar todas as comunicações com o cliente para o time de Renato e Beira nas próximas sprints.</p><div class="passo-meta"><span class="passo-tag resp">Responsável: Squad</span><span class="passo-tag projeto">Thesis + ALM</span></div></div></div>
       </div>
     </div>
 
-    <div class="nota-revisao">
-      <div style="font-size:14px;flex-shrink:0">📋</div>
-      <p><strong>Nota ao PM:</strong> atualizado com base no Weekly Report de 27/05/2026 e Status Report Maio/26 do Google Drive. Revise os campos de KT, prazos de encerramento e responsáveis antes de compartilhar com o cliente.</p>
-    </div>
+
   </div>
 
   <div class="rpt-footer">
