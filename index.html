@@ -460,9 +460,13 @@ html, body { height: 100%; font-family: 'Red Hat Display', system-ui, sans-serif
       <span class="month-dot dot-amarelo"></span>
       <span class="month-name">Abr 2026</span>
     </div>
-    <div class="month-item active" onclick="showMonth('mai26')">
+    <div class="month-item" onclick="showMonth('mai26')">
       <span class="month-dot dot-amarelo"></span>
       <span class="month-name">Mai 2026</span>
+    </div>
+    <div class="month-item active" onclick="showMonth('jun26')">
+      <span class="month-dot dot-amarelo"></span>
+      <span class="month-name">Jun 2026</span>
       <span class="month-new-badge">atual</span>
     </div>
     <div style="height:1px;background:rgba(255,255,255,0.07);margin:8px 2px;"></div>
@@ -474,7 +478,7 @@ html, body { height: 100%; font-family: 'Red Hat Display', system-ui, sans-serif
 
   <div class="sidebar-footer">
     <button class="btn-generate" onclick="alert('Conecte o Google Drive para gerar o relatório do próximo mês automaticamente.')">
-      ✦ Gerar Junho 2026
+      ✦ Gerar Julho 2026
     </button>
   </div>
 </aside>
@@ -757,11 +761,11 @@ html, body { height: 100%; font-family: 'Red Hat Display', system-ui, sans-serif
   </div>
 </div>
 
-<div class="report-view active" id="view-mai26">
+<div class="report-view" id="view-mai26">
   <div class="rpt-header">
     <div class="rpt-header-left">
       <div class="rpt-header-title">Status Report — AlmapBBDO — Maio 2026</div>
-      <div class="rpt-header-sub">AI Factory · Sprint encerramento · Contrato encerra em Junho/26 · Relatório mais recente</div>
+      <div class="rpt-header-sub">AI Factory · Encerramento · Sprint 7 — semanas finais</div>
     </div>
     <div class="rpt-header-right">
       <button class="btn-export" onclick="window.print()">Exportar PDF</button>
@@ -1013,6 +1017,226 @@ html, body { height: 100%; font-family: 'Red Hat Display', system-ui, sans-serif
 </div>
 
 
+
+<!-- ═══════════════════════════════════════════
+     JUNHO 2026
+═══════════════════════════════════════════ -->
+<div class="report-view active" id="view-jun26">
+  <div class="rpt-header">
+    <div class="rpt-header-left">
+      <div class="rpt-header-title">Status Report — AlmapBBDO — Junho 2026</div>
+      <div class="rpt-header-sub">AI Factory · Encerramento · Foco total em Synths V2</div>
+    </div>
+    <div class="rpt-header-right">
+      <button class="btn-export" onclick="window.print()">Exportar PDF</button>
+      <button class="btn-export primary" onclick="showMonth('hist')">Ver histórico</button>
+    </div>
+  </div>
+
+  <div class="rpt-hero">
+    <div class="rpt-hero-top">
+      <div>
+        <div class="hero-tag">AI Factory — Squad Dedicada</div>
+        <h1>Status Report<br>AlmapBBDO</h1>
+        <div class="rpt-hero-sub">Período de referência: 01/06/2026 – 30/06/2026</div>
+      </div>
+      <div class="farol-geral">
+        <span class="farol-geral-label">Farol geral</span>
+        <div class="farol-badge amarelo">
+          <div class="farol-dot"></div>
+          <span>Atenção</span>
+        </div>
+      </div>
+    </div>
+    <div class="rpt-hero-meta">
+      <div class="meta-item"><div class="meta-label">Head Delivery</div><div class="meta-val">Pedrão Oliveira</div></div>
+      <div class="meta-item"><div class="meta-label">Product Owner</div><div class="meta-val">Thais Chehab</div></div>
+      <div class="meta-item"><div class="meta-label">Início do projeto</div><div class="meta-val">Setembro 2025</div></div>
+      <div class="meta-item"><div class="meta-label">Status do contrato</div><div class="meta-val" style="color:#f44336;font-weight:600;">Encerramento Jun 2026</div></div>
+      <div class="meta-item"><div class="meta-label">Produtos ativos</div><div class="meta-val">5 squads</div></div>
+    </div>
+  </div>
+
+  <div class="rpt-body">
+
+    <div style="background:rgba(244,67,54,0.08);border:1px solid rgba(244,67,54,0.3);border-radius:10px;padding:16px 20px;margin-bottom:24px;display:flex;gap:12px;align-items:flex-start;">
+      <div style="font-size:18px;flex-shrink:0">🔴</div>
+      <div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;color:#f44336;text-transform:uppercase;margin-bottom:4px;">Fase de encerramento</div>
+        <p style="margin:0;font-size:13px;color:var(--fg1);line-height:1.6;">O projeto encontra-se em <strong>fase de encerramento de contrato</strong>. ALM já encerrado (08/06). AI Suite (CPM, DC, Thesis) com handover em andamento. <strong>Foco total do time concentrado no Synths V2</strong> — correção de bugs críticos e quick wins antes do encerramento definitivo.</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><div class="section-num">01</div><h2>Status geral</h2></div>
+      <div class="saude-grid">
+        <div class="saude-card">
+          <h4>Resumo executivo</h4>
+          <p>Fase de encerramento em curso. Desacoplamento da AI Suite concluído — ALM encerrado em 08/06, CPM/DC/Thesis em handover. Synths V2 validado no QA com dois bugs críticos em correção imediata. Firebase: Cenário B aprovado (remoção + JWT), sequenciado após correções prioritárias. Rodrigo Cattoi executa quick wins de frontend; Rafael Mayer foca em bugs de IA. Docker e LangFuse operacionais na nova VM.</p>
+        </div>
+        <div class="saude-card">
+          <h4>Score de risco do mês</h4>
+          <div class="score-wrap">
+            <div class="score-item warn"><div class="score-num">1</div><div class="score-label">Bloqueios</div></div>
+            <div class="score-item warn"><div class="score-num">3</div><div class="score-label">Pendências ativas</div></div>
+            <div class="score-item ok"><div class="score-num">4</div><div class="score-label">Faróis verdes</div></div>
+            <div class="score-item info"><div class="score-num">1</div><div class="score-label">Farol amarelo</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="section">
+      <div class="section-title"><div class="section-num">02</div><h2>Atividades — Junho 2026</h2></div>
+
+      <div class="projeto-card">
+        <div class="projeto-header">
+          <div class="projeto-header-left"><div class="projeto-nome">Synths V2</div><div class="projeto-info">PO: Thais Chehab · Início: Set/2025 · Foco: correções críticas + quick wins</div></div>
+          <div class="farol-pill amarelo">Atenção</div>
+        </div>
+        <div class="projeto-body">
+          <div class="proj-col">
+            <h5>Entregas recentes</h5>
+            <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">V2 validada no QA — paridade com V1 confirmada (roteiros escritos e vídeo-monstro)</div><div class="entrega-date">Jun/26 · Validado</div></div></div>
+            <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">Docker migration concluída — frontend, backend e LangFuse em nova VM</div><div class="entrega-date">Jun/26 · Done</div></div></div>
+            <div class="entrega-item"><div class="entrega-dot progress"></div><div><div class="entrega-text">#3983 Garantir consistência V1 vs V2 para estímulo de vídeo — Rafael Mayer</div><div class="entrega-date">Doing IA · Em andamento</div></div></div>
+            <div class="entrega-item"><div class="entrega-dot progress"></div><div><div class="entrega-text">#3992 Tornar critérios pré-definidos de dinâmicos para estáticos — Rafael Mayer</div><div class="entrega-date">Doing IA · Em andamento</div></div></div>
+            <div class="entrega-item"><div class="entrega-dot progress"></div><div><div class="entrega-text">#4007 Tornar obrigatório descrição de audiência (quick win) — Rodrigo Cattoi</div><div class="entrega-date">Doing Data · Em andamento</div></div></div>
+          </div>
+          <div class="proj-col">
+            <h5>Pendências e riscos</h5>
+            <ul class="alerta-list">
+              <li class="pendencia">Bug crítico: entrevistas concluídas sem mensagens visíveis — debug de persistência pendente</li>
+              <li class="pendencia">Quadro Comparativo inconsistente entre execuções — padronização necessária</li>
+              <li class="risco">Decisão de hospedagem pós-contrato (GCP vs VM) com Renato — pendente</li>
+              <li class="risco">Firebase Cenário B aprovado — execução após #3983 e #3992</li>
+              <li class="risco">Rafael com carga dividida (50/50) — Rodrigo Cattoi cobre handovers</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="projeto-card">
+        <div class="projeto-header">
+          <div class="projeto-header-left"><div class="projeto-nome">Assets / ALM</div><div class="projeto-info">PO: Thais Chehab · Início: Set/2025 · Encerrado em 08/06/2026</div></div>
+          <div class="farol-pill verde">Verde</div>
+        </div>
+        <div class="projeto-body">
+          <div class="proj-col">
+            <h5>Encerramento concluído</h5>
+            <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">Handover e pipeline de renomeação entregues — encerrado formalmente em 08/06</div><div class="entrega-date">08/06 · Done</div></div></div>
+            <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">LangFuse inserido no docker (#3888 Done)</div><div class="entrega-date">Done</div></div></div>
+          </div>
+          <div class="proj-col">
+            <h5>Pendências</h5>
+            <ul class="alerta-list">
+              <li class="pendencia">Validação de taxonomia pela Almap (formalidade final)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="projeto-card">
+        <div class="projeto-header">
+          <div class="projeto-header-left"><div class="projeto-nome">Conversor de Plano — CPM</div><div class="projeto-info">PO: Thais Chehab · Início: Set/2025 · Encerramento em andamento</div></div>
+          <div class="farol-pill verde">Verde</div>
+        </div>
+        <div class="projeto-body">
+          <div class="proj-col">
+            <h5>Situação atual</h5>
+            <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">Desacoplamento da AI Suite concluído (#3885 API/worker docker, #3884 GCS → File System)</div><div class="entrega-date">Done</div></div></div>
+            <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">Sprint 7 encerrada — Importe de Metas, Manual de uso, MFA API entregues</div><div class="entrega-date">Done</div></div></div>
+          </div>
+          <div class="proj-col">
+            <h5>Pendências</h5>
+            <ul class="alerta-list">
+              <li class="pendencia">Relatório Gerencial de casos de uso (Distrito)</li>
+              <li class="risco">Encerramento formal via docker compose ao vivo com Almap</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="projeto-card">
+        <div class="projeto-header">
+          <div class="projeto-header-left"><div class="projeto-nome">Double Check / App Tradutor</div><div class="projeto-info">PO: Thais Chehab · Início: Nov/2025 · Encerramento em andamento</div></div>
+          <div class="farol-pill verde">Verde</div>
+        </div>
+        <div class="projeto-body">
+          <div class="proj-col">
+            <h5>Situação atual</h5>
+            <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">Desacoplamento via AI Suite concluído</div><div class="entrega-date">Done</div></div></div>
+            <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">Validações e correções de falsos positivos/negativos contínuas</div><div class="entrega-date">Contínuo</div></div></div>
+          </div>
+          <div class="proj-col">
+            <h5>Pendências</h5>
+            <ul class="alerta-list">
+              <li class="pendencia">Testes e devolutiva pela Almap</li>
+              <li class="pendencia">Rotina de envio MFA pela Almap</li>
+              <li class="risco">Encerramento formal docker compose ao vivo com Almap</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="projeto-card">
+        <div class="projeto-header">
+          <div class="projeto-header-left"><div class="projeto-nome">Thesis</div><div class="projeto-info">PO: Thais Chehab · Início: Nov/2025 · Encerramento em andamento</div></div>
+          <div class="farol-pill verde">Verde</div>
+        </div>
+        <div class="projeto-body">
+          <div class="proj-col">
+            <h5>Entregas concluídas</h5>
+            <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">Desacoplamento Thesis × AI Suite concluído (#3886 Done)</div><div class="entrega-date">Done</div></div></div>
+            <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">Todos os estímulos (imagem, vídeo, áudio, gif) entregues</div><div class="entrega-date">Done</div></div></div>
+            <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">Parâmetros Meta → TikTok/Google entregues</div><div class="entrega-date">Done</div></div></div>
+          </div>
+          <div class="proj-col">
+            <h5>Pendências</h5>
+            <ul class="alerta-list">
+              <li class="pendencia">Logo e descrição de todos os casos de uso (pendência Almap)</li>
+              <li class="risco">Encerramento formal docker compose ao vivo com Almap</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <hr class="divider">
+
+    <div class="section">
+      <div class="section-title"><div class="section-num">03</div><h2>Decisões e bloqueios</h2></div>
+      <div class="decisao-card"><div class="decisao-icon bloqueio">🔴</div><div class="decisao-content"><div class="decisao-tag bloqueio">Bloqueio</div><h5>Estratégia de hospedagem Synths pós-contrato — pendente com Renato/Almap</h5><p>Decisão entre manter GCP (menor esforço) ou migrar para VM própria (maior autonomia, exige conteinerização). Ponto decisivo: define o roadmap das próximas semanas antes do encerramento.</p></div></div>
+      <div class="decisao-card"><div class="decisao-icon decisao">✅</div><div class="decisao-content"><div class="decisao-tag decisao">Decisão técnica</div><h5>Firebase: Cenário B aprovado — remoção com substituição por JWT/DB</h5><p>Firebase será removido do Synths após conclusão das correções prioritárias (#3983 consistência de vídeo e #3992 critérios estáticos). Garante maior autonomia operacional. Estimativa de esforço a ser levantada por Rafael esta semana.</p></div></div>
+      <div class="decisao-card"><div class="decisao-icon decisao">✅</div><div class="decisao-content"><div class="decisao-tag decisao">Decisão</div><h5>ALM encerrado formalmente em 08/06</h5><p>Encerramento concluído com pipeline de renomeação entregue e handover realizado. Pendência residual: validação de taxonomia pela Almap.</p></div></div>
+      <div class="decisao-card"><div class="decisao-icon decisao">✅</div><div class="decisao-content"><div class="decisao-tag decisao">Decisão de processo</div><h5>Quick wins priorizados — Rodrigo Cattoi executa frontend, Rafael foca em IA</h5><p>Divisão de trabalho: Rodrigo executa quick wins de frontend (obrigatoriedade, simplificação de dados, categorias); Rafael Mayer foca exclusivamente em correções de IA (consistência de vídeo e critérios estáticos).</p></div></div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="section">
+      <div class="section-title"><div class="section-num">04</div><h2>Próximos passos</h2></div>
+      <div class="passo-grid">
+        <div class="passo-card"><div class="passo-num">01</div><div class="passo-content"><h5>Fechar bugs críticos do Synths V2</h5><p>#3983 (consistência V1/V2 vídeo) e #3992 (critérios estáticos) — prioridade máxima com Rafael Mayer.</p><div class="passo-meta"><span class="passo-tag resp">Responsável: Rafael Mayer</span><span class="passo-tag projeto">Synths</span></div></div></div>
+        <div class="passo-card"><div class="passo-num">02</div><div class="passo-content"><h5>Executar quick wins de frontend</h5><p>#4007 (obrigatoriedade audiência), #4008 (simplificação dados), #4009 (categorias estágio de vida) — em paralelo.</p><div class="passo-meta"><span class="passo-tag resp">Responsável: Rodrigo Cattoi</span><span class="passo-tag projeto">Synths</span></div></div></div>
+        <div class="passo-card"><div class="passo-num">03</div><div class="passo-content"><h5>Decidir hospedagem pós-contrato Synths</h5><p>GCP vs VM própria — alinhar com Renato antes de planejar conteinerização e remoção do Firebase.</p><div class="passo-meta"><span class="passo-tag resp">Responsável: Thais + Renato</span><span class="passo-tag projeto">Synths</span></div></div></div>
+        <div class="passo-card"><div class="passo-num">04</div><div class="passo-content"><h5>Levantar esforço da remoção do Firebase</h5><p>Rafael estima esforço do Cenário B (JWT/DB) após decisão de infra — iniciar somente após #3983 e #3992 concluídos.</p><div class="passo-meta"><span class="passo-tag resp">Responsável: Rafael Mayer</span><span class="passo-tag projeto">Synths</span></div></div></div>
+        <div class="passo-card"><div class="passo-num">05</div><div class="passo-content"><h5>Encerramento formal AI Suite (CPM, DC, Thesis)</h5><p>Docker compose ao vivo com Almap para handover dos 3 produtos restantes.</p><div class="passo-meta"><span class="passo-tag resp">Responsável: Squad</span><span class="passo-tag projeto">CPM · DC · Thesis</span></div></div></div>
+        <div class="passo-card"><div class="passo-num">06</div><div class="passo-content"><h5>Investigar saída do PM Conrado (Swift)</h5><p>Thais verifica com Pedrão o impacto e próximos passos para substituição no projeto Swift.</p><div class="passo-meta"><span class="passo-tag resp">Responsável: Thais Chehab</span><span class="passo-tag projeto">Interno</span></div></div></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="rpt-footer">
+    <div class="logo">DIST<span>R</span>ITO</div>
+    <div class="rpt-footer-right">AI Factory · AlmapBBDO<br>Status Report — Junho 2026 · Confidencial</div>
+  </div>
+</div>
+
 <!-- ═══════════════════════════════════════════
      HISTÓRICO
 ═══════════════════════════════════════════ -->
@@ -1020,34 +1244,34 @@ html, body { height: 100%; font-family: 'Red Hat Display', system-ui, sans-serif
   <div class="hist-hero">
     <div class="hero-tag">AI Factory — Squad Dedicada</div>
     <h1>Histórico de relatórios</h1>
-    <p>AlmapBBDO · Setembro 2025 – Maio 2026 · 9 relatórios</p>
+    <p>AlmapBBDO · Setembro 2025 – Junho 2026 · 10 relatórios</p>
   </div>
   <div class="rpt-body" style="padding-top:32px;">
 
     <div class="compare-banner">
       <div class="compare-banner-icon">↗</div>
-      <p>Comparativo <strong>Abril vs Maio 2026</strong>: bloqueios reduziram de 2 para 1 — Synths v2 consolidada como versão definitiva. Thesis permanece em atenção; dependência transversal de feedback da Almap persiste nos demais produtos.</p>
+      <p>Comparativo <strong>Maio vs Junho 2026</strong>: foco total migrou para Synths. Desacoplamento AI Suite concluído — ALM encerrado, CPM/DC/Thesis em handover. Firebase Cenário B decidido (pós-correções críticas). Dois bugs Synths em correção.</p>
     </div>
 
     <div class="compare-grid">
       <div class="compare-card">
-        <div class="compare-header"><div class="compare-header-title">Abril 2026</div></div>
+        <div class="compare-header"><div class="compare-header-title">Maio 2026</div></div>
         <div class="compare-body">
-          <div class="compare-row"><span class="compare-lbl">Bloqueios</span><span class="compare-val">2</span></div>
-          <div class="compare-row"><span class="compare-lbl">Pendências ativas</span><span class="compare-val">3</span></div>
-          <div class="compare-row"><span class="compare-lbl">Faróis verdes</span><span class="compare-val">3</span></div>
+          <div class="compare-row"><span class="compare-lbl">Bloqueios</span><span class="compare-val">1</span></div>
+          <div class="compare-row"><span class="compare-lbl">Pendências ativas</span><span class="compare-val">4</span></div>
+          <div class="compare-row"><span class="compare-lbl">Faróis verdes</span><span class="compare-val">4</span></div>
           <div class="compare-row"><span class="compare-lbl">Faróis amarelos</span><span class="compare-val">1</span></div>
-          <div class="compare-row"><span class="compare-lbl">Produtos ativos</span><span class="compare-val">4</span></div>
+          <div class="compare-row"><span class="compare-lbl">Produtos ativos</span><span class="compare-val">5</span></div>
         </div>
       </div>
       <div class="compare-card current-report">
-        <div class="compare-header"><div class="compare-header-title">Maio 2026</div><div class="compare-header-label">atual</div></div>
+        <div class="compare-header"><div class="compare-header-title">Junho 2026</div><div class="compare-header-label">atual</div></div>
         <div class="compare-body">
-          <div class="compare-row"><span class="compare-lbl">Bloqueios</span><span class="compare-val better">1 ↓</span></div>
-          <div class="compare-row"><span class="compare-lbl">Pendências ativas</span><span class="compare-val worse">4 ↑</span></div>
-          <div class="compare-row"><span class="compare-lbl">Faróis verdes</span><span class="compare-val better">4 ↑</span></div>
+          <div class="compare-row"><span class="compare-lbl">Bloqueios</span><span class="compare-val same">1 →</span></div>
+          <div class="compare-row"><span class="compare-lbl">Pendências ativas</span><span class="compare-val better">3 ↓</span></div>
+          <div class="compare-row"><span class="compare-lbl">Faróis verdes</span><span class="compare-val same">4 →</span></div>
           <div class="compare-row"><span class="compare-lbl">Faróis amarelos</span><span class="compare-val same">1 →</span></div>
-          <div class="compare-row"><span class="compare-lbl">Produtos ativos</span><span class="compare-val better">5 ↑</span></div>
+          <div class="compare-row"><span class="compare-lbl">Produtos ativos</span><span class="compare-val same">5 →</span></div>
         </div>
       </div>
     </div>
@@ -1145,10 +1369,21 @@ html, body { height: 100%; font-family: 'Red Hat Display', system-ui, sans-serif
       <div class="hist-item" onclick="showMonth('mai26')">
         <div class="hist-date-col"><div class="hist-date-label">Mai 2026</div></div>
         <div class="hist-connector"><div class="hist-dot-outer amarelo"><div class="hist-dot-inner amarelo"></div></div></div>
-        <div class="hist-card amarelo current">
-          <div class="hist-card-top"><div class="hist-card-title">Sprint 7 — semanas finais</div><span class="hist-card-badge current">Atual</span></div>
+        <div class="hist-card amarelo">
+          <div class="hist-card-top"><div class="hist-card-title">Sprint 7 — semanas finais</div><span class="hist-card-badge amarelo">Atenção</span></div>
           <div class="hist-card-desc">Synths v2 consolidada como versão definitiva. Thesis em atenção aguardando validação Almap. Dependência transversal de feedback persiste em todos os produtos.</div>
           <div class="hist-card-stats"><span class="hist-stat"><strong>5</strong> squads</span><span class="hist-stat"><strong>1</strong> bloqueio</span><span class="hist-stat"><strong>4</strong> pendências</span></div>
+          <span class="hist-card-link">Ver relatório →</span>
+        </div>
+      </div>
+
+      <div class="hist-item" onclick="showMonth('jun26')">
+        <div class="hist-date-col"><div class="hist-date-label">Jun 2026</div></div>
+        <div class="hist-connector"><div class="hist-dot-outer amarelo"><div class="hist-dot-inner amarelo"></div></div></div>
+        <div class="hist-card amarelo current">
+          <div class="hist-card-top"><div class="hist-card-title">Encerramento — Foco Synths V2</div><span class="hist-card-badge current">Atual</span></div>
+          <div class="hist-card-desc">ALM encerrado. AI Suite em handover. Firebase Cenário B decidido. Dois bugs críticos Synths em correção (vídeo + critérios estáticos).</div>
+          <div class="hist-card-stats"><span class="hist-stat"><strong>5</strong> squads</span><span class="hist-stat"><strong>1</strong> bloqueio</span><span class="hist-stat"><strong>3</strong> pendências</span></div>
           <span class="hist-card-link">Ver relatório completo →</span>
         </div>
       </div>
@@ -1206,7 +1441,7 @@ function showMonth(id) {
     document.getElementById('mainArea').scrollTop = 0;
   }
 
-  const map = { set25:0, out25:1, nov25:2, dez25:3, jan26:4, fev26:5, mar26:6, abr26:7, mai26:8, hist:9 };
+  const map = { set25:0, out25:1, nov25:2, dez25:3, jan26:4, fev26:5, mar26:6, abr26:7, mai26:8, jun26:9, hist:10 };
   const items = document.querySelectorAll('.month-item');
   if (map[id] !== undefined && items[map[id]]) {
     items[map[id]].classList.add('active');
