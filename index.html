@@ -1022,298 +1022,737 @@ html, body { height: 100%; font-family: 'Red Hat Display', system-ui, sans-serif
      JUNHO 2026
 ═══════════════════════════════════════════ -->
 <div class="report-view active" id="view-jun26">
-  <div class="rpt-header">
-    <div class="rpt-header-left">
-      <div class="rpt-header-title">Status Report — AlmapBBDO — Junho 2026</div>
-      <div class="rpt-header-sub">AI Factory · Encerramento Contratual · Sprint final</div>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --brand: #d0095f; --brand-dark: #a80750; --brand-light: #f4eff1;
+  --bg: #f2f2f0; --white: #fff; --dark: #1a1a1a;
+  --fg1: #1a1a1a; --fg2: #595959; --fg3: #8a8a8a;
+  --border: #e5e5e5;
+  --green: #2e7d32; --green-bg: #e8f5e9;
+  --yellow: #7d5a00; --yellow-bg: #fff8e1;
+  --red: #c62828; --red-bg: #ffebee;
+  --shadow: 0 2px 20px rgba(0,0,0,0.04);
+  --shadow-h: 0 4px 32px rgba(0,0,0,0.08);
+}
+body { font-family: 'Red Hat Display', system-ui, sans-serif; background: var(--bg); color: var(--fg1); -webkit-font-smoothing: antialiased; }
+
+/* HEADER */
+.header { background: var(--dark); padding: 18px 48px; display: flex; align-items: center; justify-content: space-between; }
+.logo { font-size: 20px; font-weight: 700; color: #fff; letter-spacing: -0.02em; }
+.logo span { color: var(--brand); }
+.header-center { display: flex; flex-direction: column; align-items: center; gap: 2px; }
+.header-client { font-size: 13px; font-weight: 700; color: rgba(255,255,255,0.9); }
+.header-date { font-size: 11px; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 0.08em; }
+
+/* HERO */
+.hero { background: var(--dark); padding: 48px 48px 56px; border-bottom: 1px solid rgba(255,255,255,0.06); }
+.hero-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 32px; }
+.hero-tag { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--brand); background: rgba(208,9,95,0.12); border: 1px solid rgba(208,9,95,0.25); padding: 4px 10px; border-radius: 6px; margin-bottom: 16px; }
+.hero h1 { font-size: 36px; font-weight: 700; color: #fff; line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 10px; }
+.hero-sub { font-size: 14px; color: rgba(255,255,255,0.45); }
+.farol-geral { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; flex-shrink: 0; }
+.farol-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.35); }
+.farol-badge { display: flex; align-items: center; gap: 8px; padding: 10px 18px; border-radius: 8px; }
+.farol-badge.amarelo { background: rgba(255,193,7,0.12); border: 1px solid rgba(255,193,7,0.3); }
+.farol-badge.verde { background: rgba(76,175,80,0.12); border: 1px solid rgba(76,175,80,0.3); }
+.farol-badge.vermelho { background: rgba(244,67,54,0.12); border: 1px solid rgba(244,67,54,0.3); }
+.farol-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+.amarelo .farol-dot { background: #ffc107; box-shadow: 0 0 8px rgba(255,193,7,0.6); }
+.verde .farol-dot { background: #4caf50; box-shadow: 0 0 8px rgba(76,175,80,0.6); }
+.vermelho .farol-dot { background: #f44336; box-shadow: 0 0 8px rgba(244,67,54,0.6); }
+.farol-badge.amarelo span { color: #ffc107; }
+.farol-badge.verde span { color: #4caf50; }
+.farol-badge.vermelho span { color: #f44336; }
+.farol-badge span { font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }
+.hero-meta { display: flex; gap: 0; margin-top: 36px; padding-top: 36px; border-top: 1px solid rgba(255,255,255,0.07); }
+.meta-item { flex: 1; padding-right: 16px; }
+.meta-item .meta-label { font-size: 10px; color: rgba(255,255,255,0.35); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 4px; }
+.meta-item .meta-val { font-size: 13px; font-weight: 500; color: rgba(255,255,255,0.85); }
+
+/* BODY */
+.body { max-width: 960px; margin: 0 auto; padding: 56px 48px 96px; }
+.section { margin-bottom: 52px; }
+.section-title { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
+.section-num { width: 24px; height: 24px; border-radius: 50%; background: var(--brand); color: #fff; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.section-title h2 { font-size: 18px; font-weight: 700; letter-spacing: -0.01em; }
+.divider { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
+
+/* STATUS GERAL */
+.saude-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.saude-card { background: var(--white); border-radius: 16px; box-shadow: var(--shadow); padding: 20px 24px; }
+.saude-card h4 { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--fg3); margin-bottom: 8px; }
+.saude-card p { font-size: 14px; color: var(--fg2); line-height: 1.6; }
+.score-wrap { display: flex; gap: 12px; margin-top: 4px; }
+.score-item { flex: 1; background: var(--bg); border-radius: 10px; padding: 12px; text-align: center; }
+.score-num { font-size: 22px; font-weight: 700; }
+.score-item .score-label { font-size: 11px; color: var(--fg3); margin-top: 2px; }
+.score-item.warn .score-num { color: #e65100; }
+.score-item.ok .score-num { color: var(--green); }
+.score-item.info .score-num { color: var(--brand); }
+
+/* PRODUTO CARD */
+.projeto-card { background: var(--white); border-radius: 16px; box-shadow: var(--shadow); overflow: hidden; margin-bottom: 16px; }
+.projeto-header { display: flex; align-items: center; justify-content: space-between; padding: 20px 24px 16px; border-bottom: 1px solid var(--border); }
+.projeto-header-left { display: flex; flex-direction: column; gap: 4px; }
+.projeto-nome { font-size: 16px; font-weight: 700; }
+.projeto-info { font-size: 12px; color: var(--fg3); }
+.farol-pill { display: flex; align-items: center; gap: 6px; padding: 5px 12px; border-radius: 20px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; }
+.farol-pill.amarelo { background: var(--yellow-bg); color: var(--yellow); }
+.farol-pill.verde { background: var(--green-bg); color: var(--green); }
+.farol-pill.vermelho { background: var(--red-bg); color: var(--red); }
+.farol-pill::before { content: ''; width: 7px; height: 7px; border-radius: 50%; display: inline-block; }
+.farol-pill.amarelo::before { background: #f9a825; }
+.farol-pill.verde::before { background: #4caf50; }
+.farol-pill.vermelho::before { background: #f44336; }
+.projeto-body { padding: 20px 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.proj-col h5 { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--fg3); margin-bottom: 10px; }
+.entrega-item { display: flex; align-items: flex-start; gap: 8px; padding: 7px 0; border-bottom: 1px solid var(--bg); }
+.entrega-item:last-child { border-bottom: none; }
+.entrega-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); margin-top: 5px; flex-shrink: 0; }
+.entrega-dot.in-progress { background: #f9a825; }
+.entrega-dot.em-andamento { background: #42a5f5; }
+.entrega-text { font-size: 12px; color: var(--fg2); line-height: 1.4; }
+.entrega-date { font-size: 11px; color: var(--fg3); margin-top: 1px; }
+.alerta-list { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+.alerta-list li { font-size: 12px; color: var(--fg2); line-height: 1.5; padding: 8px 10px; border-radius: 8px; }
+.alerta-list li.pendência { background: #fff8e1; border-left: 3px solid #f9a825; }
+.alerta-list li.risco { background: #fff3f3; border-left: 3px solid #ef5350; }
+
+/* DEMANDAS TABLE */
+.demandas-wrap { padding: 0 24px 20px; }
+.demandas-title { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--fg3); margin-bottom: 10px; padding-top: 4px; }
+.demandas-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+.demandas-table th { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--fg3); text-align: left; padding: 6px 10px; border-bottom: 1px solid var(--border); background: var(--bg); }
+.demandas-table td { padding: 8px 10px; border-bottom: 1px solid var(--bg); color: var(--fg2); vertical-align: middle; }
+.demandas-table tr:last-child td { border-bottom: none; }
+.badge { display: inline-block; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.06em; }
+.badge.alta { background: var(--red-bg); color: var(--red); }
+.badge.media { background: var(--yellow-bg); color: var(--yellow); }
+.badge.done { background: var(--green-bg); color: var(--green); }
+.badge.andamento { background: #e3f2fd; color: #1565c0; }
+.badge.bloqueada { background: #fff3f3; color: var(--red); }
+.badge.backlog { background: var(--bg); color: var(--fg3); }
+.badge.pendente { background: var(--yellow-bg); color: var(--yellow); }
+
+/* DECISOES */
+.decisão-card { background: var(--white); border-radius: 14px; box-shadow: var(--shadow); padding: 18px 20px; margin-bottom: 10px; display: flex; gap: 14px; }
+.decisão-icon { width: 32px; height: 32px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; }
+.decisão-icon.bloqueio { background: var(--red-bg); }
+.decisão-icon.pendência { background: var(--yellow-bg); }
+.decisão-icon.decisão { background: var(--green-bg); }
+.decisão-content h5 { font-size: 13px; font-weight: 700; margin-bottom: 4px; }
+.decisão-content p { font-size: 12px; color: var(--fg2); line-height: 1.55; }
+.decisão-tag { display: inline-block; font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; padding: 2px 7px; border-radius: 4px; margin-bottom: 6px; }
+.decisão-tag.bloqueio { background: var(--red-bg); color: var(--red); }
+.decisão-tag.pendência { background: var(--yellow-bg); color: var(--yellow); }
+.decisão-tag.decisão { background: var(--green-bg); color: var(--green); }
+
+/* PROXIMOS PASSOS */
+.passo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.passo-card { background: var(--white); border-radius: 14px; box-shadow: var(--shadow); padding: 16px 18px; display: flex; gap: 12px; }
+.passo-num { width: 28px; height: 28px; border-radius: 8px; background: var(--brand-light); color: var(--brand); font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.passo-content h5 { font-size: 13px; font-weight: 700; margin-bottom: 3px; }
+.passo-content p { font-size: 12px; color: var(--fg2); line-height: 1.5; }
+.passo-meta { margin-top: 6px; display: flex; gap: 6px; flex-wrap: wrap; }
+.passo-tag { font-size: 10px; padding: 2px 7px; border-radius: 4px; font-weight: 500; }
+.passo-tag.resp { background: var(--bg); color: var(--fg2); }
+.passo-tag.projeto { background: var(--brand-light); color: var(--brand); }
+
+/* NOTA */
+.nota-revisao { background: var(--brand-light); border: 1px solid rgba(208,9,95,0.2); border-radius: 12px; padding: 14px 18px; display: flex; gap: 10px; align-items: flex-start; margin-top: 48px; }
+.nota-revisao p { font-size: 12px; color: var(--brand-dark); line-height: 1.55; }
+.nota-revisao strong { font-weight: 700; }
+
+/* FOOTER */
+.footer { background: var(--dark); padding: 24px 48px; display: flex; align-items: center; justify-content: space-between; }
+.footer .logo { font-size: 16px; }
+.footer-right { font-size: 11px; color: rgba(255,255,255,0.3); text-align: right; line-height: 1.6; }
+
+/* ENCERRAMENTO BANNER */
+.encerramento-banner { background: rgba(208,9,95,0.08); border: 1px solid rgba(208,9,95,0.2); border-radius: 10px; padding: 10px 16px; margin-bottom: 20px; font-size: 12px; color: var(--brand-dark); font-weight: 500; letter-spacing: 0.01em; }
+
+@media print {
+  .header, .hero, .footer { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .projeto-card, .decisão-card, .passo-card, .saude-card { box-shadow: none; border: 1px solid var(--border); }
+  .section { page-break-inside: avoid; }
+}
+</style>
+<!-- ── HEADER ── -->
+<header class="header">
+  <img src="data:image/png;base64,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" alt="Distrito" style="height:32px; background:#fff; padding:6px 12px; border-radius:6px;">
+  <div class="header-center">
+    <div class="header-client">AlmapBBDO</div>
+    <div class="header-date">Status Report · Junho 2026</div>
+  </div>
+</header>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-top">
+    <div class="hero-left">
+      <div class="hero-tag">AI Factory — Encerramento Contratual · Jun 2026</div>
+      <h1>Status Report<br>AlmapBBDO</h1>
+      <div class="hero-sub">Período de referência: Junho 2026 — Sprint de encerramento</div>
     </div>
-    <div class="rpt-header-right">
-      <button class="btn-export" onclick="window.print()">Exportar PDF</button>
-      <button class="btn-export primary" onclick="showMonth('hist')">Ver histórico</button>
+    <div class="farol-geral">
+      <span class="farol-label">Farol geral</span>
+      <div class="farol-badge amarelo">
+        <div class="farol-dot"></div>
+        <span>Atenção</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-meta">
+    <div class="meta-item"><div class="meta-label">Head Delivery</div><div class="meta-val">Pedrão Oliveira</div></div>
+    <div class="meta-item"><div class="meta-label">Product Owner</div><div class="meta-val">Thais Chehab</div></div>
+    <div class="meta-item"><div class="meta-label">Início do projeto</div><div class="meta-val">Setembro 2025</div></div>
+    <div class="meta-item"><div class="meta-label">Fase atual</div><div class="meta-val">Encerramento / Handover</div></div>
+    <div class="meta-item"><div class="meta-label">Produtos ativos</div><div class="meta-val">5 squads</div></div>
+  </div>
+</section>
+
+<main class="body">
+
+  <!-- ── 01. STATUS GERAL ── -->
+  <div class="section">
+    <div class="section-title">
+      <div class="section-num">01</div>
+      <h2>Status geral</h2>
+    </div>
+    <div class="encerramento-banner">
+      Projeto em fase de encerramento contratual. Foco em handover técnico, migração Docker e KT para o time Almap.
+    </div>
+    <div class="saude-grid">
+      <div class="saude-card">
+        <h4>Resumo executivo</h4>
+        <p>Projeto em sprint de encerramento. Synths com bugs críticos em investigação (entrevistas vazias e paridade V1/V2). Thesis com desacoplamento em andamento, previsto para 16/Jun. ALM concluído, CPM e Double Check estáveis. Decisão tomada de remover Firebase em todos os produtos.</p>
+      </div>
+      <div class="saude-card">
+        <h4>Score de risco do mês</h4>
+        <div class="score-wrap">
+          <div class="score-item warn">
+            <div class="score-num">2</div>
+            <div class="score-label">Bloqueios</div>
+          </div>
+          <div class="score-item warn">
+            <div class="score-num">6</div>
+            <div class="score-label">Pendências ativas</div>
+          </div>
+          <div class="score-item ok">
+            <div class="score-num">3</div>
+            <div class="score-label">Faróis verdes</div>
+          </div>
+          <div class="score-item info">
+            <div class="score-num">2</div>
+            <div class="score-label">Farol amarelo</div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
-  <div class="rpt-hero">
-    <div class="rpt-hero-top">
-      <div>
-        <div class="hero-tag">AI Factory — Encerramento Contratual · Jun 2026</div>
-        <h1>Status Report<br>AlmapBBDO</h1>
-        <div class="rpt-hero-sub">Período de referência: 01/06/2026 – 30/06/2026</div>
+  <hr class="divider">
+
+  <!-- ── 02. ATIVIDADES ── -->
+  <div class="section">
+    <div class="section-title">
+      <div class="section-num">02</div>
+      <h2>Resumo de atividades — Sprint de encerramento</h2>
+    </div>
+
+    <!-- SYNTHS -->
+    <div class="projeto-card">
+      <div class="projeto-header">
+        <div class="projeto-header-left">
+          <div class="projeto-nome">Synths</div>
+          <div class="projeto-info">PO: Thais Chehab · Início: Set/2025 · Encerramento: Jun/2026 (Backlog)</div>
+        </div>
+        <div class="farol-pill amarelo">Atenção</div>
       </div>
-      <div class="farol-geral">
-        <span class="farol-geral-label">Farol geral</span>
-        <div class="farol-badge amarelo">
-          <div class="farol-dot"></div>
-          <span>Atenção</span>
+      <div class="projeto-body">
+        <div class="proj-col">
+          <h5>Entregas concluídas</h5>
+          <div class="entrega-item">
+            <div class="entrega-dot"></div>
+            <div><div class="entrega-text">V2 validada no QA: roteiros escritos e vídeo-monstro</div></div>
+          </div>
+          <div class="entrega-item">
+            <div class="entrega-dot"></div>
+            <div><div class="entrega-text">Geração assíncrona via Celery (timeout eliminado)</div></div>
+          </div>
+          <div class="entrega-item">
+            <div class="entrega-dot"></div>
+            <div><div class="entrega-text">PDF export reescrito com pdfmake</div></div>
+          </div>
+          <div class="entrega-item">
+            <div class="entrega-dot"></div>
+            <div><div class="entrega-text">Descrição de audiência obrigatória</div></div>
+          </div>
+          <div class="entrega-item">
+            <div class="entrega-dot"></div>
+            <div><div class="entrega-text">Bug de faixa etária corrigido</div></div>
+          </div>
+          <div class="entrega-item">
+            <div class="entrega-dot"></div>
+            <div><div class="entrega-text">Simplificação de dados de Cliente, Job e Experimento</div></div>
+          </div>
+          <div class="entrega-item">
+            <div class="entrega-dot"></div>
+            <div><div class="entrega-text">Remoção do botão de adicionar renda</div></div>
+          </div>
+          <div class="entrega-item">
+            <div class="entrega-dot"></div>
+            <div><div class="entrega-text">Quick win: dropdown de seleção cliente-job no experimento</div></div>
+          </div>
+        </div>
+        <div class="proj-col">
+          <h5>Pendências e riscos</h5>
+          <ul class="alerta-list">
+            <li class="risco">Bug crítico: entrevistas concluídas com 0 mensagens visíveis — Rodrigo Cattoi investigando após subida dos repos</li>
+            <li class="risco">Paridade V1 vs V2: erro pontual confirmado por Rafael, não sistemático — bateria estatística de 10-20 testes pendente</li>
+            <li class="pendência">Validação formal do escopo V2 com Daniel (Almap) pendente</li>
+            <li class="pendência">Devolutiva async e PDF export aguardando Almap</li>
+            <li class="pendência">Retorno de Daniel sobre categorias de estágio de vida</li>
+          </ul>
+        </div>
+      </div>
+      <!-- DEMANDAS TABLE -->
+      <div class="demandas-wrap">
+        <div class="demandas-title">Demandas Synths V2 — priorização</div>
+        <table class="demandas-table">
+          <thead>
+            <tr>
+              <th>Demanda</th>
+              <th>Prioridade</th>
+              <th>Complexidade</th>
+              <th>Estimativa</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Consistência V1 vs V2 para estímulo de vídeo</td>
+              <td><span class="badge alta">Alta</span></td>
+              <td>Alta</td>
+              <td>5 dias</td>
+              <td><span class="badge andamento">Em investigação</span></td>
+            </tr>
+            <tr>
+              <td>Ordem dos critérios no relatório</td>
+              <td><span class="badge alta">Alta</span></td>
+              <td>Média</td>
+              <td>0,3 dias</td>
+              <td><span class="badge andamento">Em andamento</span></td>
+            </tr>
+            <tr>
+              <td>Padronizar quadro comparativo no relatório final</td>
+              <td><span class="badge alta">Alta</span></td>
+              <td>Baixa</td>
+              <td>0,5 dias</td>
+              <td><span class="badge bloqueada">Bloqueada — depende de fix de vídeo</span></td>
+            </tr>
+            <tr>
+              <td>Implementar Admin Role</td>
+              <td><span class="badge alta">Alta</span></td>
+              <td>Alta</td>
+              <td>5 dias</td>
+              <td><span class="badge andamento">Em andamento — remoção Firebase</span></td>
+            </tr>
+            <tr>
+              <td>Bug — Entrevistas vazias</td>
+              <td><span class="badge alta">Alta</span></td>
+              <td>Média</td>
+              <td>2 dias</td>
+              <td><span class="badge andamento">Em investigação</span></td>
+            </tr>
+            <tr>
+              <td>Dashboard de user role</td>
+              <td><span class="badge media">Média</span></td>
+              <td>Média</td>
+              <td>2 dias</td>
+              <td><span class="badge andamento">Em andamento — remoção Firebase</span></td>
+            </tr>
+            <tr>
+              <td>Restrição de menu lateral e páginas (user role)</td>
+              <td><span class="badge media">Média</span></td>
+              <td>Média</td>
+              <td>1 dia</td>
+              <td><span class="badge bloqueada">Depende de Admin Role</span></td>
+            </tr>
+            <tr>
+              <td>Download de entrevistas individuais e todas</td>
+              <td><span class="badge media">Média</span></td>
+              <td>Média</td>
+              <td>1 dia</td>
+              <td><span class="badge backlog">Backlog</span></td>
+            </tr>
+            <tr>
+              <td>Adicionar campo Outros Dados (Religião e Etnia)</td>
+              <td><span class="badge media">Média</span></td>
+              <td>Média</td>
+              <td>2 dias</td>
+              <td><span class="badge backlog">Backlog</span></td>
+            </tr>
+            <tr>
+              <td>Ajustar categorias de estágio de vida</td>
+              <td><span class="badge media">Média</span></td>
+              <td>Baixa</td>
+              <td>0,3 dias</td>
+              <td><span class="badge pendente">Aguardando retorno Daniel</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ALM -->
+    <div class="projeto-card">
+      <div class="projeto-header">
+        <div class="projeto-header-left">
+          <div class="projeto-nome">Assets / ALM</div>
+          <div class="projeto-info">PO: Thais Chehab · Início: Set/2025 · Encerramento: Concluído (8/Jun)</div>
+        </div>
+        <div class="farol-pill verde">Verde</div>
+      </div>
+      <div class="projeto-body">
+        <div class="proj-col">
+          <h5>Entregas concluídas</h5>
+          <div class="entrega-item">
+            <div class="entrega-dot"></div>
+            <div><div class="entrega-text">Renomeação Boticário concluída (enviada para Bera e Renato)</div></div>
+          </div>
+          <div class="entrega-item">
+            <div class="entrega-dot"></div>
+            <div><div class="entrega-text">Banco: colunas nome_original e nome_sugerido implementadas</div></div>
+          </div>
+          <div class="entrega-item">
+            <div class="entrega-dot"></div>
+            <div><div class="entrega-text">Taxonomia padrão aplicando corretamente em lote</div></div>
+          </div>
+          <div class="entrega-item">
+            <div class="entrega-dot"></div>
+            <div><div class="entrega-text">Upload de pasta, renomeação e ordenação alfabética de marcas</div></div>
+          </div>
+          <div class="entrega-item">
+            <div class="entrega-dot"></div>
+            <div><div class="entrega-text">Bug de upload múltiplo corrigido</div></div>
+          </div>
+          <div class="entrega-item">
+            <div class="entrega-dot em-andamento"></div>
+            <div><div class="entrega-text">Migração Docker — GCS para file system, API e Worker (Rodrigo Cattoi, ~9 Jun)</div></div>
+          </div>
+        </div>
+        <div class="proj-col">
+          <h5>Pendências e riscos</h5>
+          <ul class="alerta-list">
+            <li class="pendência">Validação de taxonomia pela Almap</li>
+            <li class="pendência">Definição de rotina MFA pela Almap</li>
+          </ul>
         </div>
       </div>
     </div>
-    <div class="rpt-hero-meta">
-      <div class="meta-item"><div class="meta-label">Head Delivery</div><div class="meta-val">Pedrão Oliveira</div></div>
-      <div class="meta-item"><div class="meta-label">Product Owner</div><div class="meta-val">Thais Chehab</div></div>
-      <div class="meta-item"><div class="meta-label">Início do projeto</div><div class="meta-val">Setembro 2025</div></div>
-      <div class="meta-item"><div class="meta-label">Status do contrato</div><div class="meta-val" style="color:#f44336;font-weight:600;">Encerramento Jun 2026</div></div>
-      <div class="meta-item"><div class="meta-label">Produtos ativos</div><div class="meta-val">5 squads</div></div>
+
+    <!-- CPM -->
+    <div class="projeto-card">
+      <div class="projeto-header">
+        <div class="projeto-header-left">
+          <div class="projeto-nome">Conversor de Plano CPM</div>
+          <div class="projeto-info">PO: Thais Chehab · Início: Set/2025 · Encerramento: AI Suite Docker (10/Jun)</div>
+        </div>
+        <div class="farol-pill verde">Verde</div>
+      </div>
+      <div class="projeto-body">
+        <div class="proj-col">
+          <h5>Entregas concluídas</h5>
+          <div class="entrega-item">
+            <div class="entrega-dot"></div>
+            <div><div class="entrega-text">Importe de Metas integrado ao front-end</div></div>
+          </div>
+          <div class="entrega-item">
+            <div class="entrega-dot"></div>
+            <div><div class="entrega-text">Manual de uso entregue e liberado para testes</div></div>
+          </div>
+          <div class="entrega-item">
+            <div class="entrega-dot"></div>
+            <div><div class="entrega-text">MFA migrado para API Distrito/Almap</div></div>
+          </div>
+          <div class="entrega-item">
+            <div class="entrega-dot"></div>
+            <div><div class="entrega-text">Sprint 7 encerrada com todas as entregas</div></div>
+          </div>
+        </div>
+        <div class="proj-col">
+          <h5>Pendências e riscos</h5>
+          <ul class="alerta-list">
+            <li class="risco">Nenhum feedback da Almap desde 03/04 — risco de baixa adoção</li>
+            <li class="pendência">Relatório Gerencial de casos de uso pendente</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- THESIS -->
+    <div class="projeto-card">
+      <div class="projeto-header">
+        <div class="projeto-header-left">
+          <div class="projeto-nome">Thesis</div>
+          <div class="projeto-info">PO: Thais Chehab · Início: Nov/2025 · Encerramento: Em andamento (~16/Jun)</div>
+        </div>
+        <div class="farol-pill amarelo">Atenção</div>
+      </div>
+      <div class="projeto-body">
+        <div class="proj-col">
+          <h5>Entregas concluídas</h5>
+          <div class="entrega-item">
+            <div class="entrega-dot"></div>
+            <div><div class="entrega-text">Todos os estímulos (imagem, vídeo, áudio, gif) entregues</div></div>
+          </div>
+          <div class="entrega-item">
+            <div class="entrega-dot"></div>
+            <div><div class="entrega-text">Replicação Meta para TikTok/Google finalizada (15/05)</div></div>
+          </div>
+          <div class="entrega-item">
+            <div class="entrega-dot"></div>
+            <div><div class="entrega-text">Análise técnica de desacoplamento concluída (15/05)</div></div>
+          </div>
+          <div class="entrega-item">
+            <div class="entrega-dot em-andamento"></div>
+            <div><div class="entrega-text">Desacoplamento Thesis x AI Suite em execução — subida dos repos (Front, Back, Language Fuse)</div></div>
+          </div>
+        </div>
+        <div class="proj-col">
+          <h5>Pendências e riscos</h5>
+          <ul class="alerta-list">
+            <li class="risco">Ponto crítico: migração PostgreSQL e Worker Celery exige min. 4Gi de memória</li>
+            <li class="risco">Falhas pontuais de autenticação no DevOps durante subida dos repos</li>
+            <li class="pendência">KT com Almap agendado após conclusão do desacoplamento</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- DOUBLE CHECK -->
+    <div class="projeto-card">
+      <div class="projeto-header">
+        <div class="projeto-header-left">
+          <div class="projeto-nome">Double Check</div>
+          <div class="projeto-info">PO: Thais Chehab · Início: Nov/2025 · Encerramento: AI Suite Docker (10/Jun)</div>
+        </div>
+        <div class="farol-pill verde">Verde</div>
+      </div>
+      <div class="projeto-body">
+        <div class="proj-col">
+          <h5>Entregas concluídas</h5>
+          <div class="entrega-item">
+            <div class="entrega-dot"></div>
+            <div><div class="entrega-text">Criação e padronização de regras de validação e roteiros</div></div>
+          </div>
+          <div class="entrega-item">
+            <div class="entrega-dot"></div>
+            <div><div class="entrega-text">Testes de precisão e ajustes por curadoria</div></div>
+          </div>
+          <div class="entrega-item">
+            <div class="entrega-dot"></div>
+            <div><div class="entrega-text">MFA migrado para API Distrito/Almap</div></div>
+          </div>
+          <div class="entrega-item">
+            <div class="entrega-dot"></div>
+            <div><div class="entrega-text">Sprint 4 concluída</div></div>
+          </div>
+        </div>
+        <div class="proj-col">
+          <h5>Pendências e riscos</h5>
+          <ul class="alerta-list">
+            <li class="pendência">Feedback da equipe piloto pendente</li>
+            <li class="pendência">Definição de rotina MFA pela Almap</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <hr class="divider">
+
+  <!-- ── 03. DECISOES E BLOQUEIOS ── -->
+  <div class="section">
+    <div class="section-title">
+      <div class="section-num">03</div>
+      <h2>Decisões e bloqueios</h2>
+    </div>
+
+    <div class="decisão-card">
+      <div class="decisão-icon decisão"></div>
+      <div class="decisão-content">
+        <div class="decisão-tag decisão">Decisão</div>
+        <h5>Remoção do Firebase — Cenário B confirmado</h5>
+        <p>Decisão tomada de remover Firebase de todos os produtos. Substituição por JWT/DB para autenticação. Maior autonomia operacional para o time Almap após encerramento. Impacta Admin Role, Dashboard de user role e restrição de menu lateral no Synths.</p>
+      </div>
+    </div>
+
+    <div class="decisão-card">
+      <div class="decisão-icon bloqueio"></div>
+      <div class="decisão-content">
+        <div class="decisão-tag bloqueio">Bloqueio Crítico</div>
+        <h5>Synths — Bug de entrevistas vazias</h5>
+        <p>Entrevistas marcadas como concluídas apresentam 0 mensagens visíveis. Rerun não resolve. Rodrigo Cattoi assume investigação de logs e banco de dados após concluir subida dos repositórios.</p>
+      </div>
+    </div>
+
+    <div class="decisão-card">
+      <div class="decisão-icon bloqueio"></div>
+      <div class="decisão-content">
+        <div class="decisão-tag bloqueio">Bloqueio</div>
+        <h5>Synths — Paridade V1 vs V2 em vídeo</h5>
+        <p>Testes do cliente apontaram divergência. Rafael verificou que o erro é pontual e não sistemático — parte da natureza não determinística da IA generativa. Bateria estatística de 10-20 testes sendo preparada por Rafael Mayer para comprovação com dados.</p>
+      </div>
+    </div>
+
+    <div class="decisão-card">
+      <div class="decisão-icon decisão"></div>
+      <div class="decisão-content">
+        <div class="decisão-tag decisão">Decisão</div>
+        <h5>Synths permanece no GCP</h5>
+        <p>Decidido que o Synths não será conteinerizado. Permanece hospedado no Google Cloud Platform. Entrega foca em fechar escopo V2 e realizar KT com o time Almap.</p>
+      </div>
+    </div>
+
+    <div class="decisão-card">
+      <div class="decisão-icon pendência"></div>
+      <div class="decisão-content">
+        <div class="decisão-tag pendência">Pendência</div>
+        <h5>Almap — Validação formal escopo V2 e retornos pendentes</h5>
+        <p>Validação formal do escopo Synths V2 com Daniel ainda não realizada. Devolutiva de async e PDF export aguardada. Retorno sobre categorias de estágio de vida em aberto.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <hr class="divider">
+
+  <!-- ── 04. PROXIMOS PASSOS ── -->
+  <div class="section">
+    <div class="section-title">
+      <div class="section-num">04</div>
+      <h2>Próximos passos</h2>
+    </div>
+
+    <div class="passo-grid">
+
+      <div class="passo-card">
+        <div class="passo-num">01</div>
+        <div class="passo-content">
+          <h5>Executar bateria de testes de vídeo (10-20 fluxos)</h5>
+          <p>Coletar dados estatísticos para comprovar que a paridade V1 vs V2 está dentro do esperado para IA generativa.</p>
+          <div class="passo-meta">
+            <span class="passo-tag resp">Rafael Mayer</span>
+            <span class="passo-tag projeto">Synths</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="passo-card">
+        <div class="passo-num">02</div>
+        <div class="passo-content">
+          <h5>Investigar entrevistas vazias</h5>
+          <p>Analisar logs e banco de dados após conclusão da subida dos repositórios (Thesis Front, Back e Language Fuse).</p>
+          <div class="passo-meta">
+            <span class="passo-tag resp">Rodrigo Cattoi</span>
+            <span class="passo-tag projeto">Synths</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="passo-card">
+        <div class="passo-num">03</div>
+        <div class="passo-content">
+          <h5>Finalizar subida dos repositórios</h5>
+          <p>Resolver falhas de autenticação no DevOps e concluir envio de Thesis Front, Back e Language Fuse.</p>
+          <div class="passo-meta">
+            <span class="passo-tag resp">Rodrigo Cattoi</span>
+            <span class="passo-tag projeto">Thesis</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="passo-card">
+        <div class="passo-num">04</div>
+        <div class="passo-content">
+          <h5>Cobrar Daniel — retorno estágio de vida e validação V2</h5>
+          <p>Solicitar retorno sobre categorias de estágio de vida e agendar reunião de validação formal do escopo Synths V2.</p>
+          <div class="passo-meta">
+            <span class="passo-tag resp">Thais Chehab</span>
+            <span class="passo-tag projeto">Synths</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="passo-card">
+        <div class="passo-num">05</div>
+        <div class="passo-content">
+          <h5>Ajustar critérios de aceite</h5>
+          <p>Atualizar critérios após estabilização das questões de recomendação de vídeo.</p>
+          <div class="passo-meta">
+            <span class="passo-tag resp">Rafael Mayer</span>
+            <span class="passo-tag projeto">Synths</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="passo-card">
+        <div class="passo-num">06</div>
+        <div class="passo-content">
+          <h5>Concluir desacoplamento Thesis</h5>
+          <p>Separar frontend/backend do AI Suite, replicar auth e banco, migrar GCS para file system Docker.</p>
+          <div class="passo-meta">
+            <span class="passo-tag resp">Rodrigo Cattoi / Squad</span>
+            <span class="passo-tag projeto">Thesis · Prazo ~16 Jun</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="passo-card">
+        <div class="passo-num">07</div>
+        <div class="passo-content">
+          <h5>KT Thesis com Almap</h5>
+          <p>Sessão prática: Almap instala Docker, sobe o compose e opera o produto de forma autônoma.</p>
+          <div class="passo-meta">
+            <span class="passo-tag resp">Pedrão Oliveira</span>
+            <span class="passo-tag projeto">Thesis · Após 16 Jun</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="passo-card">
+        <div class="passo-num">08</div>
+        <div class="passo-content">
+          <h5>KT Synths com Almap</h5>
+          <p>Sessão ao vivo + README: walkthrough completo do GCP, configurações e operação do dia a dia.</p>
+          <div class="passo-meta">
+            <span class="passo-tag resp">Thais Chehab</span>
+            <span class="passo-tag projeto">Synths · Jun 2026</span>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 
-  <div class="rpt-body">
-
-    <div style="background:rgba(208,9,95,0.08);border:1px solid rgba(208,9,95,0.25);border-radius:10px;padding:16px 20px;margin-bottom:24px;">
-      <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;color:var(--brand);text-transform:uppercase;margin-bottom:6px;">Fase de encerramento</div>
-      <p style="margin:0;font-size:13px;color:var(--fg1);line-height:1.6;">Projeto em <strong>encerramento contratual em junho/2026</strong>. ALM encerrado (08/06). AI Suite (CPM, DC, Thesis) com desacoplamento concluído e handover em andamento. <strong>Foco do time no Synths V2</strong> — correção de bugs críticos, quick wins e validação estatística de paridade V1/V2 antes do encerramento definitivo.</p>
-    </div>
-
-    <div class="section">
-      <div class="section-title"><div class="section-num">01</div><h2>Status geral</h2></div>
-      <div class="saude-grid">
-        <div class="saude-card">
-          <h4>Resumo executivo</h4>
-          <p>Fase de encerramento em curso. ALM encerrado em 08/06. Thesis, CPM e Double Check com desacoplamento Docker concluído — handover pendente com Almap. Synths V2 validado no QA; dois bugs críticos em investigação (entrevistas vazias e paridade V1/V2). Firebase removido — Cenário B confirmado (JWT/DB). Hospedagem pós-contrato (GCP vs VM) ainda pendente de decisão com Renato.</p>
-        </div>
-        <div class="saude-card">
-          <h4>Score de risco do mês</h4>
-          <div class="score-wrap">
-            <div class="score-item warn"><div class="score-num">2</div><div class="score-label">Bloqueios</div></div>
-            <div class="score-item warn"><div class="score-num">5</div><div class="score-label">Pendências ativas</div></div>
-            <div class="score-item ok"><div class="score-num">4</div><div class="score-label">Faróis verdes</div></div>
-            <div class="score-item info"><div class="score-num">1</div><div class="score-label">Farol amarelo</div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <hr class="divider">
-
-    <div class="section">
-      <div class="section-title"><div class="section-num">02</div><h2>Atividades — Junho 2026</h2></div>
-
-      <!-- SYNTHS -->
-      <div class="projeto-card">
-        <div class="projeto-header">
-          <div class="projeto-header-left"><div class="projeto-nome">Synths V2</div><div class="projeto-info">PO: Thais Chehab · Início: Set/2025 · Encerramento: Jun/2026 (backlog KT)</div></div>
-          <div class="farol-pill amarelo">Atenção</div>
-        </div>
-        <div class="projeto-body">
-          <div class="proj-col">
-            <h5>Entregas concluídas</h5>
-            <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">V2 validada no QA — roteiros escritos e vídeo-monstro</div></div></div>
-            <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">Geração assíncrona via Celery — timeout eliminado</div></div></div>
-            <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">PDF export reescrito com pdfmake</div></div></div>
-            <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">Descrição de audiência obrigatória, simplificação de dados, faixa etária corrigida</div></div></div>
-            <div class="entrega-item"><div class="entrega-dot in-progress"></div><div><div class="entrega-text">Dropdown cliente-job no experimento (quick win) — entregue 15/06</div></div></div>
-          </div>
-          <div class="proj-col">
-            <h5>Pendências e riscos</h5>
-            <ul class="alerta-list">
-              <li class="risco">Bug crítico: entrevistas concluídas com 0 mensagens visíveis — Rodrigo Cattoi investiga após subida dos repos</li>
-              <li class="risco">Paridade V1 vs V2: erro pontual (não sistêmico) confirmado por Rafael — bateria estatística de 10–20 testes pendente</li>
-              <li class="pendencia">Validação formal escopo V2 com Daniel (Almap) ainda não realizada</li>
-              <li class="pendencia">Devolutiva async e PDF export aguardando Almap</li>
-              <li class="pendencia">Retorno de Daniel sobre categorias de estágio de vida</li>
-            </ul>
-          </div>
-        </div>
-        <!-- DEMANDAS TABLE -->
-        <div style="padding:0 24px 24px;">
-          <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--fg3);margin-bottom:10px;">Demandas Synths V2 — priorização</div>
-          <table style="width:100%;border-collapse:collapse;font-size:12px;">
-            <thead>
-              <tr style="border-bottom:1px solid var(--border);background:var(--bg);">
-                <th style="text-align:left;padding:6px 10px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--fg3);">Demanda</th>
-                <th style="text-align:left;padding:6px 10px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--fg3);">Prioridade</th>
-                <th style="text-align:left;padding:6px 10px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--fg3);">Estimativa</th>
-                <th style="text-align:left;padding:6px 10px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--fg3);">Status</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr style="border-bottom:1px solid var(--bg);"><td style="padding:8px 10px;color:var(--fg2);">Consistência V1 vs V2 para estímulo de vídeo</td><td style="padding:8px 10px;"><span style="background:var(--red-bg);color:var(--red);font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;text-transform:uppercase;">Alta</span></td><td style="padding:8px 10px;color:var(--fg2);">5 dias</td><td style="padding:8px 10px;"><span style="background:#e3f2fd;color:#1565c0;font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;text-transform:uppercase;">Em investigação</span></td></tr>
-              <tr style="border-bottom:1px solid var(--bg);"><td style="padding:8px 10px;color:var(--fg2);">Ordem dos critérios no relatório</td><td style="padding:8px 10px;"><span style="background:var(--red-bg);color:var(--red);font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;text-transform:uppercase;">Alta</span></td><td style="padding:8px 10px;color:var(--fg2);">0,3 dias</td><td style="padding:8px 10px;"><span style="background:#e3f2fd;color:#1565c0;font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;text-transform:uppercase;">Em andamento</span></td></tr>
-              <tr style="border-bottom:1px solid var(--bg);"><td style="padding:8px 10px;color:var(--fg2);">Padronizar quadro comparativo no relatório final</td><td style="padding:8px 10px;"><span style="background:var(--red-bg);color:var(--red);font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;text-transform:uppercase;">Alta</span></td><td style="padding:8px 10px;color:var(--fg2);">0,5 dias</td><td style="padding:8px 10px;"><span style="background:var(--red-bg);color:var(--red);font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;text-transform:uppercase;">Bloqueada — depende fix vídeo</span></td></tr>
-              <tr style="border-bottom:1px solid var(--bg);"><td style="padding:8px 10px;color:var(--fg2);">Implementar Admin Role</td><td style="padding:8px 10px;"><span style="background:var(--red-bg);color:var(--red);font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;text-transform:uppercase;">Alta</span></td><td style="padding:8px 10px;color:var(--fg2);">5 dias</td><td style="padding:8px 10px;"><span style="background:#e3f2fd;color:#1565c0;font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;text-transform:uppercase;">Em andamento — remoção Firebase</span></td></tr>
-              <tr style="border-bottom:1px solid var(--bg);"><td style="padding:8px 10px;color:var(--fg2);">Bug — Entrevistas vazias</td><td style="padding:8px 10px;"><span style="background:var(--red-bg);color:var(--red);font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;text-transform:uppercase;">Alta</span></td><td style="padding:8px 10px;color:var(--fg2);">2 dias</td><td style="padding:8px 10px;"><span style="background:#e3f2fd;color:#1565c0;font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;text-transform:uppercase;">Em investigação</span></td></tr>
-              <tr style="border-bottom:1px solid var(--bg);"><td style="padding:8px 10px;color:var(--fg2);">Dashboard de user role</td><td style="padding:8px 10px;"><span style="background:var(--yellow-bg);color:var(--yellow);font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;text-transform:uppercase;">Média</span></td><td style="padding:8px 10px;color:var(--fg2);">2 dias</td><td style="padding:8px 10px;"><span style="background:#e3f2fd;color:#1565c0;font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;text-transform:uppercase;">Em andamento — remoção Firebase</span></td></tr>
-              <tr style="border-bottom:1px solid var(--bg);"><td style="padding:8px 10px;color:var(--fg2);">Restrição de menu lateral e páginas (user role)</td><td style="padding:8px 10px;"><span style="background:var(--yellow-bg);color:var(--yellow);font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;text-transform:uppercase;">Média</span></td><td style="padding:8px 10px;color:var(--fg2);">1 dia</td><td style="padding:8px 10px;"><span style="background:var(--red-bg);color:var(--red);font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;text-transform:uppercase;">Depende de Admin Role</span></td></tr>
-              <tr style="border-bottom:1px solid var(--bg);"><td style="padding:8px 10px;color:var(--fg2);">Download de entrevistas individuais e todas</td><td style="padding:8px 10px;"><span style="background:var(--yellow-bg);color:var(--yellow);font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;text-transform:uppercase;">Média</span></td><td style="padding:8px 10px;color:var(--fg2);">1 dia</td><td style="padding:8px 10px;"><span style="background:var(--bg);color:var(--fg3);font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;text-transform:uppercase;">Backlog</span></td></tr>
-              <tr style="border-bottom:1px solid var(--bg);"><td style="padding:8px 10px;color:var(--fg2);">Adicionar campo Outros Dados (Religião e Etnia)</td><td style="padding:8px 10px;"><span style="background:var(--yellow-bg);color:var(--yellow);font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;text-transform:uppercase;">Média</span></td><td style="padding:8px 10px;color:var(--fg2);">2 dias</td><td style="padding:8px 10px;"><span style="background:var(--bg);color:var(--fg3);font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;text-transform:uppercase;">Backlog</span></td></tr>
-              <tr><td style="padding:8px 10px;color:var(--fg2);">Ajustar categorias de estágio de vida</td><td style="padding:8px 10px;"><span style="background:var(--yellow-bg);color:var(--yellow);font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;text-transform:uppercase;">Média</span></td><td style="padding:8px 10px;color:var(--fg2);">0,3 dias</td><td style="padding:8px 10px;"><span style="background:var(--yellow-bg);color:var(--yellow);font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;text-transform:uppercase;">Aguardando Daniel</span></td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <!-- ALM -->
-      <div class="projeto-card">
-        <div class="projeto-header">
-          <div class="projeto-header-left"><div class="projeto-nome">Assets / ALM</div><div class="projeto-info">PO: Thais Chehab · Início: Set/2025 · Encerrado em 08/06/2026</div></div>
-          <div class="farol-pill verde">Verde</div>
-        </div>
-        <div class="projeto-body">
-          <div class="proj-col">
-            <h5>Encerramento concluído</h5>
-            <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">Renomeação Boticário concluída — enviada para Bera e Renato</div></div></div>
-            <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">Taxonomia padrão em lote, pipeline Docker e LangFuse entregues</div></div></div>
-            <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">Handover encerrado formalmente em 08/06</div></div></div>
-          </div>
-          <div class="proj-col">
-            <h5>Pendências</h5>
-            <ul class="alerta-list">
-              <li class="pendencia">Validação de taxonomia pela Almap (formalidade final)</li>
-              <li class="pendencia">Definição de rotina MFA pela Almap</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- CPM -->
-      <div class="projeto-card">
-        <div class="projeto-header">
-          <div class="projeto-header-left"><div class="projeto-nome">Conversor de Plano — CPM</div><div class="projeto-info">PO: Thais Chehab · Início: Set/2025 · Encerramento em andamento</div></div>
-          <div class="farol-pill verde">Verde</div>
-        </div>
-        <div class="projeto-body">
-          <div class="proj-col">
-            <h5>Situação atual</h5>
-            <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">Desacoplamento AI Suite concluído — API/worker Docker e GCS para file system</div></div></div>
-            <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">Sprint 7 encerrada — Importe de Metas, Manual de uso, MFA API entregues</div></div></div>
-          </div>
-          <div class="proj-col">
-            <h5>Pendências e riscos</h5>
-            <ul class="alerta-list">
-              <li class="risco">Sem feedback da Almap desde 03/04 — risco de baixa adoção</li>
-              <li class="pendencia">Relatório Gerencial de casos de uso</li>
-              <li class="risco">Encerramento formal via docker compose ao vivo com Almap</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- DOUBLE CHECK -->
-      <div class="projeto-card">
-        <div class="projeto-header">
-          <div class="projeto-header-left"><div class="projeto-nome">Double Check / App Tradutor</div><div class="projeto-info">PO: Thais Chehab · Início: Nov/2025 · Encerramento em andamento</div></div>
-          <div class="farol-pill verde">Verde</div>
-        </div>
-        <div class="projeto-body">
-          <div class="proj-col">
-            <h5>Situação atual</h5>
-            <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">Desacoplamento via AI Suite concluído</div></div></div>
-            <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">Validações e correções de falsos positivos/negativos contínuas</div></div></div>
-          </div>
-          <div class="proj-col">
-            <h5>Pendências</h5>
-            <ul class="alerta-list">
-              <li class="pendencia">Testes e devolutiva pela Almap</li>
-              <li class="pendencia">Rotina de envio MFA pela Almap</li>
-              <li class="risco">Encerramento formal docker compose ao vivo com Almap</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- THESIS -->
-      <div class="projeto-card">
-        <div class="projeto-header">
-          <div class="projeto-header-left"><div class="projeto-nome">Thesis</div><div class="projeto-info">PO: Thais Chehab · Início: Nov/2025 · Encerramento em andamento</div></div>
-          <div class="farol-pill verde">Verde</div>
-        </div>
-        <div class="projeto-body">
-          <div class="proj-col">
-            <h5>Entregas concluídas</h5>
-            <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">Desacoplamento Thesis × AI Suite concluído</div></div></div>
-            <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">Todos os estímulos (imagem, vídeo, áudio, gif) entregues</div></div></div>
-            <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">Parâmetros Meta para TikTok/Google entregues</div></div></div>
-          </div>
-          <div class="proj-col">
-            <h5>Pendências</h5>
-            <ul class="alerta-list">
-              <li class="pendencia">Logo e descrição de todos os casos de uso (pendência Almap)</li>
-              <li class="risco">Encerramento formal docker compose ao vivo com Almap</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <hr class="divider">
-
-    <div class="section">
-      <div class="section-title"><div class="section-num">03</div><h2>Decisões e bloqueios</h2></div>
-
-      <div class="decisao-card">
-        <div class="decisao-icon bloqueio">🔴</div>
-        <div class="decisao-content">
-          <div class="decisao-tag bloqueio">Bloqueio Crítico</div>
-          <h5>Synths — Bug de entrevistas vazias</h5>
-          <p>Entrevistas marcadas como concluídas apresentam 0 mensagens visíveis. Rerun não resolve. Rodrigo Cattoi investiga logs e banco de dados após concluir subida dos repositórios.</p>
-        </div>
-      </div>
-
-      <div class="decisao-card">
-        <div class="decisao-icon bloqueio">🔴</div>
-        <div class="decisao-content">
-          <div class="decisao-tag bloqueio">Bloqueio</div>
-          <h5>Hospedagem pós-contrato Synths — pendente com Renato/Almap</h5>
-          <p>Decisão entre manter GCP (menor esforço) ou migrar para VM própria (maior autonomia). Define o roadmap da conteinerização e sequenciamento da remoção do Firebase.</p>
-        </div>
-      </div>
-
-      <div class="decisao-card">
-        <div class="decisao-icon decisao">✅</div>
-        <div class="decisao-content">
-          <div class="decisao-tag decisao">Decisão</div>
-          <h5>Firebase removido — Cenário B confirmado (JWT/DB)</h5>
-          <p>Decisão tomada de remover Firebase de todos os produtos e substituir por JWT/DB. Maior autonomia operacional para o time Almap após encerramento. Execução sequenciada após resolução dos bugs de vídeo (#3983) e estabilização do Synths V2.</p>
-        </div>
-      </div>
-
-      <div class="decisao-card">
-        <div class="decisao-icon decisao">✅</div>
-        <div class="decisao-content">
-          <div class="decisao-tag decisao">Decisão</div>
-          <h5>Paridade V1 vs V2 — erro confirmado como pontual, não sistêmico</h5>
-          <p>Rafael verificou que os testes do cliente eram tendenciosos. Ao reproduzir, a maioria das respostas foi correta — erro faz parte da aleatoriedade esperada de IA generativa. Bateria estatística de 10–20 testes sendo preparada para comprovação com dados.</p>
-        </div>
-      </div>
-
-      <div class="decisao-card">
-        <div class="decisao-icon decisao">✅</div>
-        <div class="decisao-content">
-          <div class="decisao-tag decisao">Decisão</div>
-          <h5>ALM encerrado formalmente em 08/06</h5>
-          <p>Pipeline de renomeação entregue, Docker concluído e handover realizado. Pendência residual: validação de taxonomia e rotina MFA pela Almap.</p>
-        </div>
-      </div>
-
-    </div>
-
-    <hr class="divider">
-
-    <div class="section">
-      <div class="section-title"><div class="section-num">04</div><h2>Próximos passos</h2></div>
-      <div class="passo-grid">
-        <div class="passo-card"><div class="passo-num">01</div><div class="passo-content"><h5>Executar bateria de testes de vídeo (10–20 fluxos)</h5><p>Coletar dados estatísticos para comprovar paridade V1 vs V2 dentro do esperado para IA generativa.</p><div class="passo-meta"><span class="passo-tag resp">Responsável: Rafael Mayer</span><span class="passo-tag projeto">Synths</span></div></div></div>
-        <div class="passo-card"><div class="passo-num">02</div><div class="passo-content"><h5>Investigar entrevistas vazias</h5><p>Analisar logs e banco de dados após conclusão da subida dos repositórios.</p><div class="passo-meta"><span class="passo-tag resp">Responsável: Rodrigo Cattoi</span><span class="passo-tag projeto">Synths</span></div></div></div>
-        <div class="passo-card"><div class="passo-num">03</div><div class="passo-content"><h5>Cobrar Daniel — retorno estágio de vida e validação V2</h5><p>Solicitar retorno sobre categorias de estágio de vida e agendar validação formal do escopo Synths V2.</p><div class="passo-meta"><span class="passo-tag resp">Responsável: Thais Chehab</span><span class="passo-tag projeto">Synths</span></div></div></div>
-        <div class="passo-card"><div class="passo-num">04</div><div class="passo-content"><h5>Decidir hospedagem pós-contrato Synths</h5><p>GCP vs VM própria — alinhar com Renato antes de planejar conteinerização e remoção do Firebase.</p><div class="passo-meta"><span class="passo-tag resp">Responsável: Thais Chehab + Renato</span><span class="passo-tag projeto">Synths</span></div></div></div>
-        <div class="passo-card"><div class="passo-num">05</div><div class="passo-content"><h5>Ajustar critérios de aceite</h5><p>Atualizar critérios após estabilização das questões de recomendação de vídeo.</p><div class="passo-meta"><span class="passo-tag resp">Responsável: Rafael Mayer</span><span class="passo-tag projeto">Synths</span></div></div></div>
-        <div class="passo-card"><div class="passo-num">06</div><div class="passo-content"><h5>Encerramento formal AI Suite (CPM, DC, Thesis)</h5><p>Docker compose ao vivo com Almap para handover dos 3 produtos restantes.</p><div class="passo-meta"><span class="passo-tag resp">Responsável: Squad</span><span class="passo-tag projeto">CPM · DC · Thesis</span></div></div></div>
-      </div>
-    </div>
-
-    <div class="nota-revisao" style="background:var(--brand-light);border:1px solid rgba(208,9,95,0.2);border-radius:12px;padding:14px 18px;display:flex;gap:10px;align-items:flex-start;margin-top:40px;">
-      <p style="font-size:12px;color:var(--brand-dark);line-height:1.55;margin:0;"><strong>Nota ao PM:</strong> documento atualizado com base no Checkpoint 08/06/2026, Plano de Encerramento, Daily 15/06/2026 e planilha Demandas e Riscos — Synths V2. Revise pendências, prazos e responsáveis antes do envio ao cliente.</p>
-    </div>
-
+  <div class="nota-revisao">
+    <p><strong>Nota ao PM:</strong> documento gerado com base no Checkpoint 08/06/2026, Plano de Encerramento, Daily 15/06/2026 e planilha Demandas e Riscos — Synths V2. Revise pendências, prazos e responsáveis antes do envio ao cliente.</p>
   </div>
 
-  <div class="rpt-footer">
-    <div class="logo">DIST<span>R</span>ITO</div>
-    <div class="rpt-footer-right">AI Factory · AlmapBBDO<br>Status Report — Junho 2026 · Confidencial</div>
+</main>
+
+<footer class="footer">
+  <div class="logo">DIST<span>R</span>ITO</div>
+  <div class="footer-right">
+    AI Factory · AlmapBBDO<br>
+    Status Report — Junho 2026 · Confidencial
   </div>
+</footer>
 </div>
-
 
 <!-- ═══════════════════════════════════════════
      HISTÓRICO
