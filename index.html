@@ -465,7 +465,7 @@ html, body { height: 100%; font-family: 'Red Hat Display', system-ui, sans-serif
       <span class="month-name">Mai 2026</span>
     </div>
     <div class="month-item active" onclick="showMonth('jun26')">
-      <span class="month-dot dot-amarelo"></span>
+      <span class="month-dot dot-verde"></span>
       <span class="month-name">Jun 2026</span>
       <span class="month-new-badge">atual</span>
     </div>
@@ -1162,13 +1162,13 @@ body { font-family: 'Red Hat Display', system-ui, sans-serif; background: var(--
     <div>
       <div class="hero-tag">AI Factory — Encerramento Contratual · Jun 2026</div>
       <h1>Status Report<br>AlmapBBDO</h1>
-      <div class="hero-sub">Período de referência: Junho 2026 — Sprint de encerramento · Contrato até 30/06</div>
+      <div class="hero-sub">Período de referência: Junho 2026 — Sprint de encerramento · Reunião de encerramento: 29/06 · KT Synths: 30/06</div>
     </div>
     <div class="farol-geral">
       <span class="farol-label">Farol geral</span>
-      <div class="farol-badge amarelo">
+      <div class="farol-badge verde">
         <div class="farol-dot"></div>
-        <span>Atenção</span>
+        <span>Verde</span>
       </div>
     </div>
   </div>
@@ -1177,7 +1177,7 @@ body { font-family: 'Red Hat Display', system-ui, sans-serif; background: var(--
     <div class="meta-item"><div class="meta-label">Product Owner</div><div class="meta-val">Thais Chehab</div></div>
     <div class="meta-item"><div class="meta-label">Início do projeto</div><div class="meta-val">Setembro 2025</div></div>
     <div class="meta-item"><div class="meta-label">Fase atual</div><div class="meta-val" style="color:#f44336;font-weight:600;">Encerramento / Handover</div></div>
-    <div class="meta-item"><div class="meta-label">Alinhamento final</div><div class="meta-val">22/06/2026 (hoje)</div></div>
+    <div class="meta-item"><div class="meta-label">Reunião de encerramento</div><div class="meta-val">29/06/2026 (segunda-feira)</div></div>
   </div>
 </section>
 
@@ -1186,20 +1186,20 @@ body { font-family: 'Red Hat Display', system-ui, sans-serif; background: var(--
   <div class="section">
     <div class="section-title"><div class="section-num">01</div><h2>Status geral</h2></div>
     <div class="encerramento-banner">
-      Encerramento contratual em 30/06. Foco em estabilização do Synths, Admin role, evidência final de vídeo e KT para todos os produtos.
+      Encerramento contratual em 30/06. Todas as correções de Synths finalizadas. KT de AI Suite concluído — repositórios compartilhados com Emiliano. KT do Synths agendado para 30/06. Reunião de encerramento na segunda-feira (29/06).
     </div>
     <div class="saude-grid">
       <div class="saude-card">
         <h4>Resumo executivo</h4>
-        <p>Junho é o mês final do contrato. A infraestrutura está estável: Firebase removido, Cloud SQL operacional, Docker concluído para ALM, CPM, Double Check e Thesis. Thesis saiu do radar de risco com o desacoplamento concluído. Synths continua em amarelo — Admin role em andamento, validação de consistência V1/V2 concluída por Rafael, e novo pacote de 11 ajustes enviado pela Almap em 19/06 que será analisado dentro do prazo restante. Reunião de alinhamento e finalização: 22/06.</p>
+        <p>Junho é o mês final do contrato. Todas as correções do Synths foram finalizadas, incluindo vídeo comparativo V1 vs V2 compartilhado com a Almap. KT de AI Suite concluído e repositórios do GitHub compartilhados com Emiliano. Synths: tasks finais de infraestrutura (desacoplamento GCP→Docker, migração Cloud SQL, README) em conclusão — KT com Almap agendado para 30/06. Reunião de encerramento na segunda-feira (29/06). Sem dependências pendentes em nenhum dos produtos.</p>
       </div>
       <div class="saude-card">
         <h4>Score de risco do mês</h4>
         <div class="score-wrap">
           <div class="score-item ok"><div class="score-num">0</div><div class="score-label">Bloqueios</div></div>
-          <div class="score-item warn"><div class="score-num">4</div><div class="score-label">Pendências ativas</div></div>
-          <div class="score-item ok"><div class="score-num">4</div><div class="score-label">Faróis verdes</div></div>
-          <div class="score-item info"><div class="score-num">1</div><div class="score-label">Farol amarelo</div></div>
+          <div class="score-item warn"><div class="score-num">1</div><div class="score-label">Pendências ativas</div></div>
+          <div class="score-item ok"><div class="score-num">5</div><div class="score-label">Faróis verdes</div></div>
+          <div class="score-item ok"><div class="score-num">0</div><div class="score-label">Faróis amarelos</div></div>
         </div>
       </div>
     </div>
@@ -1217,30 +1217,29 @@ body { font-family: 'Red Hat Display', system-ui, sans-serif; background: var(--
           <div class="projeto-nome">Synths</div>
           <div class="projeto-info">PO: Thais Chehab · Início: Set/2025 · Hospedagem: GCP · Encerramento: 30/Jun</div>
         </div>
-        <div class="farol-pill amarelo">Atenção</div>
+        <div class="farol-pill verde">Verde</div>
       </div>
       <div class="projeto-body">
         <div class="proj-col">
           <h5>Entregas concluídas no período</h5>
           <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">Firebase removido — autenticação e roles migrados para Cloud SQL</div><div class="entrega-date">Rodrigo Cattoi · Done</div></div></div>
-          <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">Conteinerização concluída — Cloud Run removido</div><div class="entrega-date">Done</div></div></div>
-          <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">Bug entrevistas vazias: corrigido</div><div class="entrega-date">Done</div></div></div>
-          <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">Bug faixa etária: corrigido</div><div class="entrega-date">Done</div></div></div>
-          <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">Ordem critérios, quadro comparativo, audiência obrigatória, simplificação de campos, estágios de vida, remoção botão renda, download de entrevistas</div><div class="entrega-date">Done</div></div></div>
-          <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">Consistência V1 vs V2 validada por Rafael — discrepâncias eram por formato de entrada (texto vs. vídeo), não falha do modelo</div><div class="entrega-date">Rafael Mayer · Done</div></div></div>
+          <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">Conteinerização GCP concluída — Cloud Run removido</div><div class="entrega-date">Done</div></div></div>
+          <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">Todas as correções de QA finalizadas: bugs, critérios, quadro comparativo, audiência, campos, estágios de vida, download de entrevistas, hábitos de mídia, lista de clientes, transcrições</div><div class="entrega-date">Rafael Mayer · Rodrigo Cattoi · Done</div></div></div>
+          <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">Vídeo comparativo V1 vs V2 compartilhado com Almap — equiparação de funcionalidades demonstrada</div><div class="entrega-date">Done</div></div></div>
+          <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">Admin role + restrição de acesso por perfil implementados</div><div class="entrega-date">Rodrigo Cattoi · Done</div></div></div>
           <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">Reuniões de validação com stakeholders Almap (Bazan, Yudi, Bera) realizadas</div><div class="entrega-date">Done</div></div></div>
-          <h5 style="margin-top:14px;">Em andamento</h5>
-          <div class="entrega-item"><div class="entrega-dot in-progress"></div><div><div class="entrega-text">Admin role (Rodrigo Cattoi) — ALTA prioridade</div><div class="entrega-date">Em andamento</div></div></div>
-          <div class="entrega-item"><div class="entrega-dot in-progress"></div><div><div class="entrega-text">Dashboard user role + restrição de menu/páginas</div><div class="entrega-date">Em andamento</div></div></div>
+          <h5 style="margin-top:14px;">Em finalização (tasks da semana)</h5>
+          <div class="entrega-item"><div class="entrega-dot in-progress"></div><div><div class="entrega-text">Desacoplamento GCP → Docker (#3899)</div><div class="entrega-date">Rodrigo Cattoi · Em andamento</div></div></div>
+          <div class="entrega-item"><div class="entrega-dot in-progress"></div><div><div class="entrega-text">Migração Cloud SQL (#4124)</div><div class="entrega-date">Rodrigo Cattoi · Em andamento</div></div></div>
+          <div class="entrega-item"><div class="entrega-dot in-progress"></div><div><div class="entrega-text">Estruturar README para KT (#4161)</div><div class="entrega-date">Rafael Mayer · Em andamento</div></div></div>
         </div>
         <div class="proj-col">
-          <h5>Pendências e riscos</h5>
+          <h5>Pendências</h5>
           <ul class="alerta-list">
-            <li class="pendencia">Evidência final em vídeo para validação do cliente — Rafael aguarda estabilização do ambiente</li>
-            <li class="pendencia">Admin role e restrições de acesso — em andamento</li>
-            <li class="pendencia">KT: sessão ao vivo + README com equipe Almap (walkthrough GCP + operação)</li>
-            <li class="risco">Novo pacote de 11 ajustes enviado pela Almap em 19/06 — sendo analisado, mas contrato encerra em 30/06. Itens não absorvidos serão documentados no handover para priorização pós-encerramento.</li>
+            <li class="pendencia">KT Synths: sessão ao vivo com equipe Almap — agendado para terça-feira 30/06</li>
           </ul>
+          <h5 style="margin-top:14px;">Sem dependências ativas</h5>
+          <p style="font-size:12px;color:var(--fg3);margin-top:6px;">Todos os ajustes solicitados foram entregues. Sem bloqueios ou dependências pendentes no produto.</p>
         </div>
       </div>
       <div class="demandas-wrap">
@@ -1266,15 +1265,15 @@ body { font-family: 'Red Hat Display', system-ui, sans-serif; background: var(--
             <tr><td>#1 · Imprecisão estímulo roteiro vs. vídeo</td><td><span class="badge media">Média</span></td><td><span class="badge bloqueio">Não será implementado</span></td></tr>
             <tr><td>#2 · Critérios — substituir sinalizados no relatório</td><td><span class="badge media">Média</span></td><td><span class="badge bloqueio">Não será implementado</span></td></tr>
             <tr><td>#3 · Quadro comparativo final — padronizar formato</td><td><span class="badge media">Média</span></td><td><span class="badge bloqueio">Não será implementado</span></td></tr>
-            <tr><td>#4.1 · Download de transcrições (individual e em lote)</td><td><span class="badge media">Média</span></td><td><span class="badge andamento">Em andamento · Rafa Mayer · 23/06</span></td></tr>
-            <tr><td>#4.2 · Área admin para dashboard (ocultar de usuários comuns)</td><td><span class="badge media">Média</span></td><td><span class="badge analise">Pendente · Rodrigo Cattoi</span></td></tr>
+            <tr><td>#4.1 · Download de transcrições (individual e em lote)</td><td><span class="badge media">Média</span></td><td><span class="badge done">Done · Rafael Mayer</span></td></tr>
+            <tr><td>#4.2 · Área admin para dashboard (ocultar de usuários comuns)</td><td><span class="badge media">Média</span></td><td><span class="badge done">Done · Rodrigo Cattoi</span></td></tr>
             <tr><td>#5 · Dashboard específico para usuário</td><td><span class="badge media">Média</span></td><td><span class="badge bloqueio">Não será implementado</span></td></tr>
             <tr><td>#6 · Simplificar menu lateral</td><td><span class="badge media">Média</span></td><td><span class="badge bloqueio">Não será implementado</span></td></tr>
             <tr><td>#7 · Excluir páginas isoladas do menu e integrar por Teste/Audiência</td><td><span class="badge media">Média</span></td><td><span class="badge bloqueio">Não será implementado</span></td></tr>
-            <tr><td>#8 · Bug: lista de clientes incompleta</td><td><span class="badge media">Média</span></td><td><span class="badge analise">Pendente · Rafa Mayer · 23/06</span></td></tr>
+            <tr><td>#8 · Bug: lista de clientes incompleta</td><td><span class="badge media">Média</span></td><td><span class="badge done">Done · Rafael Mayer</span></td></tr>
             <tr><td>#9 · Mudar nomes Distribuição Estágio de Vida</td><td><span class="badge media">Média</span></td><td><span class="badge bloqueio">Não será implementado</span></td></tr>
             <tr><td>#10 · Adicionar grupos de religião em Outros Dados</td><td><span class="badge media">Média</span></td><td><span class="badge bloqueio">Não será implementado</span></td></tr>
-            <tr><td>#11 · Bug: Hábitos de Mídia — campo "revista" não editável</td><td><span class="badge media">Média</span></td><td><span class="badge analise">Pendente · Rafael Mayer · 23/06</span></td></tr>
+            <tr><td>#11 · Bug: Hábitos de Mídia — campo "revista" não editável</td><td><span class="badge media">Média</span></td><td><span class="badge done">Done · Rafael Mayer</span></td></tr>
           </tbody>
         </table>
       </div>
@@ -1300,10 +1299,9 @@ body { font-family: 'Red Hat Display', system-ui, sans-serif; background: var(--
           <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">Acesso ao repositório DevOps sendo liberado para Renato Martins</div><div class="entrega-date">Em andamento</div></div></div>
         </div>
         <div class="proj-col">
-          <h5>Pendências</h5>
-          <ul class="alerta-list">
-            <li class="pendencia">KT: sessão prática (docker compose up ao vivo com equipe Almap)</li>
-          </ul>
+          <h5>Entregas concluídas — KT</h5>
+          <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">KT AI Suite finalizado — sessão ao vivo com equipe Almap concluída</div><div class="entrega-date">Done</div></div></div>
+          <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">Repositórios do GitHub compartilhados com Emiliano</div><div class="entrega-date">Done</div></div></div>
         </div>
       </div>
     </div>
@@ -1324,10 +1322,9 @@ body { font-family: 'Red Hat Display', system-ui, sans-serif; background: var(--
           <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">Sprint 7 encerrada com todas as entregas (Metas, Log, Manual)</div><div class="entrega-date">Done</div></div></div>
         </div>
         <div class="proj-col">
-          <h5>Pendências</h5>
-          <ul class="alerta-list">
-            <li class="pendencia">KT: sessão prática com equipe Almap</li>
-          </ul>
+          <h5>Entregas concluídas — KT</h5>
+          <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">KT AI Suite finalizado — Almap operando produto de forma autônoma</div><div class="entrega-date">Done</div></div></div>
+          <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">Repositórios do GitHub compartilhados com Emiliano</div><div class="entrega-date">Done</div></div></div>
         </div>
       </div>
     </div>
@@ -1349,11 +1346,9 @@ body { font-family: 'Red Hat Display', system-ui, sans-serif; background: var(--
           <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">Validação de imagens com margem de 10% de tolerância implementada</div><div class="entrega-date">Done</div></div></div>
         </div>
         <div class="proj-col">
-          <h5>Pendências</h5>
-          <ul class="alerta-list">
-            <li class="pendencia">KT: sessão prática com equipe Almap (a agendar conforme disponibilidade até 30/06)</li>
-          </ul>
-          <p style="font-size:11px;color:var(--fg3);margin-top:10px;">Nota: cliente não retornou sobre necessidade de nova reunião de alinhamento. Equipe priorizou desacoplamento e Synths. KT será agendado após estabilização.</p>
+          <h5>Entregas concluídas — KT</h5>
+          <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">KT AI Suite finalizado — Thesis incluído, Almap operando de forma autônoma</div><div class="entrega-date">Done</div></div></div>
+          <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">Repositórios do GitHub compartilhados com Emiliano</div><div class="entrega-date">Done</div></div></div>
         </div>
       </div>
     </div>
@@ -1374,10 +1369,9 @@ body { font-family: 'Red Hat Display', system-ui, sans-serif; background: var(--
           <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">Sprint 4 concluída (Langfuse, MFA, testes de precisão)</div><div class="entrega-date">Done</div></div></div>
         </div>
         <div class="proj-col">
-          <h5>Pendências</h5>
-          <ul class="alerta-list">
-            <li class="pendencia">KT: sessão prática com equipe Almap</li>
-          </ul>
+          <h5>Entregas concluídas — KT</h5>
+          <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">KT AI Suite finalizado — Double Check incluído</div><div class="entrega-date">Done</div></div></div>
+          <div class="entrega-item"><div class="entrega-dot"></div><div><div class="entrega-text">Repositórios do GitHub compartilhados com Emiliano</div><div class="entrega-date">Done</div></div></div>
         </div>
       </div>
     </div>
@@ -1408,20 +1402,20 @@ body { font-family: 'Red Hat Display', system-ui, sans-serif; background: var(--
     </div>
 
     <div class="decisao-card">
-      <div class="decisao-icon pendencia">⚠️</div>
+      <div class="decisao-icon decisao">✅</div>
       <div class="decisao-content">
-        <div class="decisao-tag pendencia">Atenção</div>
-        <h5>Pacote de 11 ajustes Almap (19/06) — análise concluída</h5>
-        <p>O time da AlmapBBDO realizou testes nos dias 16-17/06 e entregou 11 pontos de ajuste para o Synths. Após análise: <strong>4 itens serão atuados</strong> (download de transcrições, área admin/dashboard, bug lista de clientes, bug hábitos de mídia) e <strong>7 não serão implementados</strong> — imprecisão roteiro/vídeo, critérios, quadro comparativo, dashboard de usuário, simplificação de menu e dois campos de dados sensíveis (estágio de vida e religião/etnia) que afetariam a metodologia do produto. Itens não concluídos até 30/06 serão documentados no handover.</p>
+        <div class="decisao-tag decisao">Concluído</div>
+        <h5>Pacote de 11 ajustes Almap (19/06) — todos os itens ativos entregues</h5>
+        <p>Dos 11 pontos enviados pela AlmapBBDO: <strong>4 itens foram implementados e entregues</strong> (download de transcrições, área admin/dashboard, bug lista de clientes, bug hábitos de mídia) e <strong>7 não serão implementados</strong> — imprecisão roteiro/vídeo, critérios, quadro comparativo, dashboard de usuário, simplificação de menu e dois campos de dados sensíveis. Todos os itens ativos estão Done.</p>
       </div>
     </div>
 
     <div class="decisao-card">
       <div class="decisao-icon decisao">✅</div>
       <div class="decisao-content">
-        <div class="decisao-tag decisao">Decisão</div>
-        <h5>Thesis: sem nova reunião de alinhamento agendada</h5>
-        <p>O cliente não retornou sobre a necessidade de nova reunião de Thesis. Dado o prazo, a equipe priorizou o desacoplamento técnico (concluído) e a finalização do Synths. KT será agendado conforme disponibilidade até 30/06.</p>
+        <div class="decisao-tag decisao">Concluído</div>
+        <h5>KT AI Suite finalizado — repositórios compartilhados com Emiliano</h5>
+        <p>Sessão de KT do AI Suite (ALM, CPM, Double Check e Thesis) realizada com a equipe Almap. Repositórios do GitHub compartilhados com Emiliano. Almap opera todos os produtos de forma autônoma via Docker.</p>
       </div>
     </div>
 
@@ -1436,54 +1430,27 @@ body { font-family: 'Red Hat Display', system-ui, sans-serif; background: var(--
       <div class="passo-card">
         <div class="passo-num">01</div>
         <div class="passo-content">
-          <h5>Concluir Admin Role no Synths</h5>
-          <p>Finalizar implementação da área de administração com CRUD de usuários, projetos, testes e audiências.</p>
-          <div class="passo-meta"><span class="passo-tag resp">Rodrigo Cattoi</span><span class="passo-tag projeto">Synths</span></div>
+          <h5>Reunião de encerramento — 29/06</h5>
+          <p>Reunião formal de encerramento contratual com Almap. Formalizar handover, confirmar autonomia operacional e encerrar o contrato.</p>
+          <div class="passo-meta"><span class="passo-tag resp">Thais Chehab + Pedrão Oliveira</span><span class="passo-tag projeto">Todos · Segunda-feira</span></div>
         </div>
       </div>
 
       <div class="passo-card">
         <div class="passo-num">02</div>
         <div class="passo-content">
-          <h5>Entregar evidência final de vídeo</h5>
-          <p>Rafael entrega vídeo demonstrando consistência V1/V2 para validação formal do cliente após estabilização do ambiente.</p>
-          <div class="passo-meta"><span class="passo-tag resp">Rafael Mayer</span><span class="passo-tag projeto">Synths · Antes de 30/06</span></div>
+          <h5>KT Synths — 30/06</h5>
+          <p>Sessão ao vivo com equipe Almap: walkthrough GCP, operação do produto, README técnico e runbook de incidentes.</p>
+          <div class="passo-meta"><span class="passo-tag resp">Thais Chehab + Rafael Mayer</span><span class="passo-tag projeto">Synths · Terça-feira</span></div>
         </div>
       </div>
 
       <div class="passo-card">
         <div class="passo-num">03</div>
         <div class="passo-content">
-          <h5>Analisar ajustes Almap 19/06 com o time</h5>
-          <p>Triagem dos 11 pontos: definir o que cabe no sprint final e o que vai para o handover como documentação.</p>
-          <div class="passo-meta"><span class="passo-tag resp">Thais Chehab + Rodrigo Cattoi</span><span class="passo-tag projeto">Synths</span></div>
-        </div>
-      </div>
-
-      <div class="passo-card">
-        <div class="passo-num">04</div>
-        <div class="passo-content">
-          <h5>Extrair dump histórico do banco de dados Synths</h5>
-          <p>Realizar download do histórico de dados gerados no Synths para preservar antes de zerar a base na migração.</p>
-          <div class="passo-meta"><span class="passo-tag resp">Thais Chehab</span><span class="passo-tag projeto">Synths · Urgente</span></div>
-        </div>
-      </div>
-
-      <div class="passo-card">
-        <div class="passo-num">05</div>
-        <div class="passo-content">
-          <h5>KT por produto com equipe Almap</h5>
-          <p>Sessões práticas: ALM (docker compose up), CPM, Double Check e Thesis (compose ao vivo). Synths: walkthrough GCP + README.</p>
-          <div class="passo-meta"><span class="passo-tag resp">Equipe Distrito</span><span class="passo-tag projeto">Todos · Até 30/06</span></div>
-        </div>
-      </div>
-
-      <div class="passo-card">
-        <div class="passo-num">06</div>
-        <div class="passo-content">
-          <h5>Reunião de alinhamento e finalização — 22/06</h5>
-          <p>Reunião estratégica com Almap para alinhar encerramento, últimas pendências e handover formal dos produtos.</p>
-          <div class="passo-meta"><span class="passo-tag resp">Thais Chehab + Pedrão Oliveira</span><span class="passo-tag projeto">Todos · Hoje</span></div>
+          <h5>Concluir tasks de infraestrutura Synths</h5>
+          <p>Finalizar desacoplamento GCP→Docker (#3899), migração Cloud SQL (#4124) e README para KT (#4161).</p>
+          <div class="passo-meta"><span class="passo-tag resp">Rodrigo Cattoi + Rafael Mayer</span><span class="passo-tag projeto">Synths · Antes de 30/06</span></div>
         </div>
       </div>
 
@@ -1491,14 +1458,14 @@ body { font-family: 'Red Hat Display', system-ui, sans-serif; background: var(--
   </div>
 
   <div class="nota-revisao">
-    <p><strong>Nota ao PM:</strong> relatório atualizado em 22/06/2026 com base no Checkpoint 08/06, Daily 15/06, Ata Synths 03/06, planilha Demandas Synths V2 e documento de Ajustes V2 Almap (19/06). PO de todos os produtos: Thais Chehab.</p>
+    <p><strong>Nota ao PM:</strong> relatório atualizado em 26/06/2026. Fontes: Status Report Maio/26, Checkpoint 08/06, Ata Estratégica 15/06, Plano de Ação Synths V2 (23/06). Todas as correções Synths finalizadas. KT AI Suite concluído (Emiliano). KT Synths: 30/06. Encerramento: 29/06. PO de todos os produtos: Thais Chehab.</p>
   </div>
 
 </main>
 
 <footer class="footer">
   <div class="logo">DIST<span>R</span>ITO</div>
-  <div class="footer-right">AI Factory · AlmapBBDO<br>Status Report — Junho 2026 · Confidencial</div>
+  <div class="footer-right">AI Factory · AlmapBBDO<br>Status Report — Junho 2026 · Atualizado 26/06 · Confidencial</div>
 </footer>
 </div>
 
@@ -1511,13 +1478,13 @@ body { font-family: 'Red Hat Display', system-ui, sans-serif; background: var(--
   <div class="hist-hero">
     <div class="hero-tag">AI Factory — Squad Dedicada</div>
     <h1>Histórico de relatórios</h1>
-    <p>AlmapBBDO · Setembro 2025 – Junho 2026 · 10 relatórios</p>
+    <p>AlmapBBDO · Setembro 2025 – Junho 2026 · 10 relatórios · Encerramento 30/06</p>
   </div>
   <div class="rpt-body" style="padding-top:32px;">
 
     <div class="compare-banner">
       <div class="compare-banner-icon">↗</div>
-      <p>Comparativo <strong>Maio vs Junho 2026</strong>: foco total migrou para Synths. Desacoplamento AI Suite concluído — ALM encerrado, CPM/DC/Thesis em handover. Firebase Cenário B decidido (pós-correções críticas). Dois bugs Synths em correção.</p>
+      <p>Comparativo <strong>Maio vs Junho 2026</strong>: todas as correções do Synths finalizadas. KT AI Suite concluído — repositórios compartilhados com Emiliano. Firebase Cenário B implementado. V1/V2 equiparadas com vídeo comparativo enviado à Almap. Reunião de encerramento: 29/06. KT Synths: 30/06.</p>
     </div>
 
     <div class="compare-grid">
@@ -1534,11 +1501,11 @@ body { font-family: 'Red Hat Display', system-ui, sans-serif; background: var(--
       <div class="compare-card current-report">
         <div class="compare-header"><div class="compare-header-title">Junho 2026</div><div class="compare-header-label">atual</div></div>
         <div class="compare-body">
-          <div class="compare-row"><span class="compare-lbl">Bloqueios</span><span class="compare-val same">1 →</span></div>
-          <div class="compare-row"><span class="compare-lbl">Pendências ativas</span><span class="compare-val better">3 ↓</span></div>
-          <div class="compare-row"><span class="compare-lbl">Faróis verdes</span><span class="compare-val same">4 →</span></div>
-          <div class="compare-row"><span class="compare-lbl">Faróis amarelos</span><span class="compare-val same">1 →</span></div>
-          <div class="compare-row"><span class="compare-lbl">Produtos ativos</span><span class="compare-val same">5 →</span></div>
+          <div class="compare-row"><span class="compare-lbl">Bloqueios</span><span class="compare-val better">0 ↓</span></div>
+          <div class="compare-row"><span class="compare-lbl">Pendências ativas</span><span class="compare-val better">1 ↓</span></div>
+          <div class="compare-row"><span class="compare-lbl">Faróis verdes</span><span class="compare-val better">5 ↑</span></div>
+          <div class="compare-row"><span class="compare-lbl">Faróis amarelos</span><span class="compare-val better">0 ↓</span></div>
+          <div class="compare-row"><span class="compare-lbl">KT concluídos</span><span class="compare-val better">4/5 ↑</span></div>
         </div>
       </div>
     </div>
@@ -1646,11 +1613,11 @@ body { font-family: 'Red Hat Display', system-ui, sans-serif; background: var(--
 
       <div class="hist-item" onclick="showMonth('jun26')">
         <div class="hist-date-col"><div class="hist-date-label">Jun 2026</div></div>
-        <div class="hist-connector"><div class="hist-dot-outer amarelo"><div class="hist-dot-inner amarelo"></div></div></div>
-        <div class="hist-card amarelo current">
-          <div class="hist-card-top"><div class="hist-card-title">Encerramento — Foco Synths V2</div><span class="hist-card-badge current">Atual</span></div>
-          <div class="hist-card-desc">ALM encerrado. AI Suite em handover. Firebase Cenário B decidido. Dois bugs críticos Synths em correção (vídeo + critérios estáticos).</div>
-          <div class="hist-card-stats"><span class="hist-stat"><strong>5</strong> squads</span><span class="hist-stat"><strong>1</strong> bloqueio</span><span class="hist-stat"><strong>3</strong> pendências</span></div>
+        <div class="hist-connector"><div class="hist-dot-outer verde"><div class="hist-dot-inner verde"></div></div></div>
+        <div class="hist-card verde current">
+          <div class="hist-card-top"><div class="hist-card-title">Encerramento — KT concluído</div><span class="hist-card-badge current">Atual</span></div>
+          <div class="hist-card-desc">Todas as correções Synths entregues. V1/V2 equiparadas. KT AI Suite concluído. Repos compartilhados com Emiliano. KT Synths: 30/06. Encerramento: 29/06.</div>
+          <div class="hist-card-stats"><span class="hist-stat"><strong>5</strong> squads</span><span class="hist-stat"><strong>0</strong> bloqueios</span><span class="hist-stat"><strong>1</strong> pendência</span></div>
           <span class="hist-card-link">Ver relatório completo →</span>
         </div>
       </div>
